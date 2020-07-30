@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head >
+
+    <meta charset="UTF-8" />
+
+    <title >Casino Royale - Jackpot Scripters</title >
+    <link rel="stylesheet" href="style/styles.css" />
+
+</head >
+
+<body >
+
+<div class="container" >
+
+    <header >
+        <h1 >Casino Royale - Rock Paper Scissors Lizard Spock</h1 >
+    </header >
+
+    <a href="index.html" >Home</a >
+    <a href="game_rpsls.html" >Rock Paper Scissors Lizard Spock</a >
+    <a href="game_twentyone.html" >Twenty-One</a >
+    <a href="game_memory.html" >Memory Game</a >
+    <a href="game_movingblock.html" >Moving Block</a >
+
+    <ul id="names" >
+        <li > Rock</li >
+        <li > Paper</li >
+        <li > Scissor</li >
+        <li > Lizard</li >
+        <li > Spock</li >
+    </ul >
+
+    <ul id="choices" >
+        <li id="rock" onclick="game(this)" >
+            <img src="assets/images/rock.png" alt="rock" />
+        </li >
+        <li id="paper" onclick="game(this)" >
+            <img src="assets/images/paper.png" alt="paper" />
+        </li >
+        <li id="scissor" onclick="game(this)" >
+            <img src="assets/images/scissor.png" alt="scissor" />
+        </li >
+        <li id="lizard" onclick="game(this)" >
+            <img src="assets/images/lizard.png" alt="lizard" />
+        </li >
+        <li id="spock" onclick="game(this)" >
+            <img src="assets/images/spock.png" alt="spock" />
+        </li >
+    </ul >
+
+    <p >Select a move from above to start!<br ><span ></span ></p >
+
+    <ul id="scores" >
+        <li id="user" >
+            <span class="icon-user" ></span >
+            <ul id="lives" >
+                <li ><span class="icon-heart" ></span ></li >
+                <li ><span class="icon-heart" ></span ></li >
+                <li ><span class="icon-heart" ></span ></li >
+            </ul >
+        </li >
+        <li id="bot" >
+            <span class="icon-android" ></span >
+            <ul id="lives" >
+                <li ><span class="icon-heart" ></span ></li >
+                <li ><span class="icon-heart" ></span ></li >
+                <li ><span class="icon-heart" ></span ></li >
+            </ul >
+        </li >
+    </ul >
+
+</div >
+
+<script src="script/game_rpsls.js" ></script >
+
+</body >
+
+</html >
