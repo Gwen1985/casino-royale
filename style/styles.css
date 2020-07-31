@@ -78,7 +78,7 @@ p {
   text-align: center;
 }
 
-/* Games */
+/* Games 
 
 #names {
   margin: 15% auto 1% auto;
@@ -198,6 +198,7 @@ p span {
     font-size: 2em;
   }
 }
+*/
 
 /*@font-face{*/
 /*font-family: 'icomoon';*/
@@ -211,6 +212,7 @@ p span {
 
 /*}*/
 
+/*
 .icon-user:before {
   content: "\e971";
   font-size: 3em;
@@ -226,7 +228,8 @@ p span {
 
 [class^="icon-"],
 [class*=" icon-"] {
-  /*font-family: 'icomoon' !important;*/
+  /*font-family: 'icomoon' !important;
   color: white;
   opacity: 0.8;
 }
+*/
