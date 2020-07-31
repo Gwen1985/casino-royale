@@ -1,263 +1,238 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+  height: 100%;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+body {
+  background-image: radial-gradient(#3a3374, #17142f);
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+#logo {
+  margin-top: 20px;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+h1 {
+  font-size: 48pt;
+  font-weight: 700;
+  color: #f4a91a;
+  margin-top: 10px;
+}
+h2 {
+  color: #f4a91a;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
+h4 {
+  font-size: 20pt;
+  font-weight: 600;
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+  color: white;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+p {
+  font-size: 16pt;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
+#score {
+  color: white;
+  border: 1px white;
+  border-style: solid;
+  padding: 10px;
   width: auto;
+  text-align: center;
+  display: inline-block;
+  font-size: 16pt;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
+
+.btn-primary {
+  background-color: #f4a91a !important;
+  font-weight: 700;
+  font-size: 14pt;
+}
+.card {
+  max-width: 500px;
+}
+.btn-primary:hover {
+  background-color: #f7ba46 !important;
+  box-shadow: 2px 6px 28px -8px rgba(0, 0, 0, 0.62);
+}
+
+.bgcolor1 {
+  background-image: linear-gradient(to right, #3c64b1, #537bc9);
+}
+.bgcolor2 {
+  background-image: linear-gradient(to right, #2783ca, #2d96d8);
+}
+.bgcolor3 {
+  background-image: linear-gradient(to right, #0d8089, #1db1ab);
+}
+.bgcolor4 {
+  background-image: linear-gradient(to right, #5927ca, #6f2dd8);
+}
+
+.footer {
+  font-size: 14pt;
+  color: white;
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* Games 
+
+#names {
+  margin: 15% auto 1% auto;
+}
+#names li {
+  display: inline-block;
+  margin: 0 3.8vw;
+  font-size: 1.6em;
+  border-radius: 15%;
+  border: 1px solid #fff;
+  padding: 0 1vw;
+  color: white;
+  background: #179b77;
+}
+
+img {
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#choices {
+  margin: auto;
+}
+
+#choices li {
+  display: inline-block;
+  cursor: pointer;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin: 0 30px;
+  line-height: 110px;
+  transition: background 1s;
+}
+
+#choices li:hover {
+  background: rgba(0, 255, 255, 0.3);
+}
+
+#choices li img {
+  vertical-align: middle;
+  pointer-events: none;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  #names {
+    display: none;
+  }
+  #choices {
+    margin-top: 30%;
+  }
+  #choices li {
+    height: 30vw;
+    width: 30vw;
+    margin-left: 1vw;
+    margin-right: 10vw;
+    margin-bottom: 4vw;
+  }
+  #choices li:nth-of-type(2n) {
+    margin-left: 0;
+  }
+}
+
+p {
+  padding-left: 40px;
+  color: #fff;
+  transition: color 1s;
+}
+p span {
+  font-size: 1.8em;
+  display: block;
+  font-weight: 700;
+}
+
+#scores li {
+  display: inline-block;
+}
+#scores li ul {
+  margin-top: 10px;
+  margin-left: -40px;
+}
+
+#scores li ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#scores li ul li span {
+  color: rgb(255, 0, 0);
+}
+
+#user,
+#bot {
+  padding: 40px;
+}
+
+#scores > li:first-child {
+  border-right: 1px solid #505050;
+}
+
+@media screen and (max-width: 800px) {
+  #scores li {
+    padding: 5%;
+  }
+}
+@media screen and (width: 768px) and (height: 1024px) {
+  #bot,
+  #user {
+    font-size: 2em;
+  }
+  p {
+    font-size: 2em;
+  }
+}
+*/
+
+/*@font-face{*/
+/*font-family: 'icomoon';*/
+/*src:  url('../fonts/icomoon.eot?ejywi');*/
+/*src:  url('../fonts/icomoon.eot?ejywi#iefix') format('embedded-opentype'),*/
+/*url('../fonts/icomoon.ttf?ejywi') format('truetype'),*/
+/*url('../fonts/icomoon.woff?ejywi') format('woff'),*/
+/*url('../fonts/icomoon.svg?ejywi#icomoon') format('svg');*/
+/*font-weight: normal;*/
+/*font-style: normal;*/
+
+/*}*/
 
 /*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.icon-user:before {
+  content: "\e971";
+  font-size: 3em;
+}
+.icon-android:before {
+  content: "\eac0";
+  font-size: 3em;
 }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
+.icon-heart:before {
+  content: "\e9da";
 }
 
-.clearfix::after {
-  clear: both;
+[class^="icon-"],
+[class*=" icon-"] {
+  /*font-family: 'icomoon' !important;
+  color: white;
+  opacity: 0.8;
 }
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
+*/
