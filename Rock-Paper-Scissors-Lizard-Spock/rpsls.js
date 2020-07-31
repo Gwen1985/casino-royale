@@ -1,12 +1,12 @@
-var text = document.getElementsByTagName("P");
+let text = document.getElementsByTagName("P");
 text = text[0];
-var userLives = 0;
-var botLives = 0;
+let userLives = 0;
+let botLives = 0;
 
 function game(choice) {
-    var result;
-    var computerChoice = Math.random();
-    var userChoice = choice.id;
+    let result;
+    let computerChoice = Math.random();
+    let userChoice = choice.id;
     computerChoice = Math.floor((computerChoice * 5) + 1);
     if (computerChoice == 1) {
         computerChoice = "Rock";
@@ -19,9 +19,9 @@ function game(choice) {
     } else {
         computerChoice = "Spock";
     }
-    var userWins = 'Bot: ' + computerChoice + '<span> YOU WIN !!</span>';
-    var botWins = 'Bot: ' + computerChoice + '<span> YOU LOSE !!</span>';
-    var draw = 'Bot: ' + computerChoice + '<span> DRAW</span>';
+    let userWins = 'Bot: ' + computerChoice + '<span> YOU WIN !!</span>';
+    let botWins = 'Bot: ' + computerChoice + '<span> YOU LOSE !!</span>';
+    let draw = 'Bot: ' + computerChoice + '<span> DRAW</span>';
     if (computerChoice == "Rock") {
         if (userChoice == "paper" || userChoice == "spock") {
             result = userWins;
@@ -90,7 +90,7 @@ function game(choice) {
 };
 
 function score(result, userWins, botWins) {
-    var life = document.getElementsByClassName("icon-heart");
+    let life = document.getElementsByClassName("icon-heart");
     if (result == userWins) {
         life[(botLives++) + 3].style.color = "black";
     } else if (result == botWins) {
@@ -102,7 +102,7 @@ function score(result, userWins, botWins) {
         } else {
             text.innerHTML += "<span>Some good luck you got there!</span>";
         }
-        for (var i = life.length - 1; i >= 0; i--) {
+        for (let i = life.length - 1; i >= 0; i--) {
             life[i].style.color = "rgb(255,0,0)";
             botLives = 0
             userLives = 0
