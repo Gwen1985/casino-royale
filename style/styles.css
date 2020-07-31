@@ -14,11 +14,7 @@ body {
 }
 
 h1 {
-<<<<<<< HEAD
   font-size: 48pt;
-=======
-  font-size: 36pt;
->>>>>>> 7ebd057e0d57a6cbe0d9a353d5fbd5431817857b
   font-weight: 700;
   color: #f4a91a;
   margin-top: 10px;
@@ -28,7 +24,6 @@ h2 {
 }
 
 h4 {
-<<<<<<< HEAD
   font-size: 20pt;
   font-weight: 600;
 
@@ -40,11 +35,6 @@ p {
 }
 
 #score {
-=======
-  font-size: 13pt;
-  font-weight: 600;
-
->>>>>>> 7ebd057e0d57a6cbe0d9a353d5fbd5431817857b
   color: white;
   border: 1px white;
   border-style: solid;
@@ -64,23 +54,6 @@ p {
   font-size: 14pt;
 }
 
-<<<<<<< HEAD
-=======
-#score {
-  color: white;
-  border: 1px black;
-  border-style: solid;
-  margin: 10px;
-  width: 200px;
-}
-
-.btn-primary {
-  background-color: #f4a91a !important;
-  font-weight: 700;
-  font-size: 10pt;
-}
-
->>>>>>> 7ebd057e0d57a6cbe0d9a353d5fbd5431817857b
 .btn-primary:hover {
   background-color: #f7ba46 !important;
   box-shadow: 2px 6px 28px -8px rgba(0, 0, 0, 0.62);
