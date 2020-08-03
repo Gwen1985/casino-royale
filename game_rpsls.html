@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
 
     <title>Casino Royale - Jackpot Scripters</title>
-    <link rel="stylesheet" href="style/styles.css"/>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
 
-</head>
-
-<body>
-
-<div class="container">
-
-    <header>
+  <body>
+    <div class="container">
+      <header>
         <h1>Casino Royale - Rock Paper Scissors Lizard Spock</h1>
-    </header>
+      </header>
 
-    <a href="index.html">Home</a>
-    <a href="game_rpsls.html">Rock Paper Scissors Lizard Spock</a>
-    <a href="game_twentyone.html">Twenty-One</a>
-    <a href="game_memory.html">Memory Game</a>
-    <a href="game_movingblock.html">Moving Block</a>
+      <a href="index.html">Home</a>
+      <a href="game_rpsls.html">Rock Paper Scissors Lizard Spock</a>
+      <a href="game_twentyone.html">Twenty-One</a>
+      <a href="game_memory.html">Memory Game</a>
+      <a href="game_movingblock.html">Moving Block</a>
 
-    <!--<ul id="names">
+      <!--<ul id="names">
         <li> Rock</li>
         <li> Paper</li>
         <li> Scissor</li>
@@ -32,49 +27,46 @@
         <li> Spock</li>
     </ul>-->
 
-    <ul id="choices">
+      <ul id="choices">
         <li id="rock" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lrock.svg" alt="rock"/>
+          <img src="assets/game_rpsls/big-lrock.svg" alt="rock" />
         </li>
         <li id="paper" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lpaper.svg" alt="paper"/>
+          <img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />
         </li>
         <li id="scissor" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor"/>
+          <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />
         </li>
         <li id="lizard" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lizard.svg" alt="lizard"/>
+          <img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />
         </li>
         <li id="spock" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lspock.svg" alt="spock"/>
+          <img src="assets/game_rpsls/big-lspock.svg" alt="spock" />
         </li>
-    </ul>
+      </ul>
 
-    <p>Select a move from above to start!<br><span></span></p>
+      <p>Select a move from above to start!<br /><span></span></p>
 
-    <ul id="scores">
+      <ul id="scores">
         <li id="user">
-            <span class="icon-user"></span>
-            <ul id="lives">
-                <li><span class="icon-heart"></span></li>
-                <li><span class="icon-heart"></span></li>
-                <li><span class="icon-heart"></span></li>
-            </ul>
+          <span class="icon-user"></span>
+          <ul id="lives">
+            <li><span class="icon-heart"></span></li>
+            <li><span class="icon-heart"></span></li>
+            <li><span class="icon-heart"></span></li>
+          </ul>
         </li>
         <li id="bot">
-            <span class="icon-android"></span>
-            <ul id="lives">
-                <li><span class="icon-heart"></span></li>
-                <li><span class="icon-heart"></span></li>
-                <li><span class="icon-heart"></span></li>
-            </ul>
+          <span class="icon-android"></span>
+          <ul id="lives">
+            <li><span class="icon-heart"></span></li>
+            <li><span class="icon-heart"></span></li>
+            <li><span class="icon-heart"></span></li>
+          </ul>
         </li>
-    </ul>
+      </ul>
+    </div>
 
-</div>
-
-<script src="script/game_rpsls.js"></script>
-
-</body>
-
+    <script src="script/game_rpsls.js"></script>
+  </body>
 </html>
