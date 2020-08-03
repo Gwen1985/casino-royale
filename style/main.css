@@ -74,6 +74,11 @@ p {
 .bgcolor4 {
   background-image: linear-gradient(to right, #5927ca, #6f2dd8);
 }
+.game {
+  background-color: white;
+  border-radius: 15px;
+  min-height: 300px;
+}
 
 .footer {
   font-size: 14pt;
