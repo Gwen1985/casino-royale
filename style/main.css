@@ -232,8 +232,7 @@ p span {
 
 [class^="icon-"],
 [class*=" icon-"] {
-  /*font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   color: white;
   opacity: 0.8;
 }
-
