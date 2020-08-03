@@ -55,6 +55,7 @@ p {
 }
 .card {
   max-width: 500px;
+  min-height: 170px;
 }
 .btn-primary:hover {
   background-color: #f7ba46 !important;
