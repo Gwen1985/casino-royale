@@ -45,52 +45,101 @@
 
       <!-- Game section -->
       <section id="game" class="game">
-        <!--<ul id="names">
-      <li> Rock</li>
-      <li> Paper</li>
-      <li> Scissor</li>
-      <li> Lizard</li>
-      <li> Spock</li>
-  </ul>-->
-
-        <ul id="choices">
-          <li id="rock" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lrock.svg" alt="rock" />
-          </li>
-          <li id="paper" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />
-          </li>
-          <li id="scissor" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />
-          </li>
-          <li id="lizard" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />
-          </li>
-          <li id="spock" onclick="game(this)">
-            <img src="assets/game_rpsls/big-lspock.svg" alt="spock" />
-          </li>
-        </ul>
-
-        <p>Select a move from above to start!<br /><span></span></p>
-
-        <ul id="scores">
-          <li id="user">
-            <span class="icon-user"></span>
-            <ul id="lives">
-              <li><span class="icon-heart"></span></li>
-              <li><span class="icon-heart"></span></li>
-              <li><span class="icon-heart"></span></li>
+        <div class="container-lg bg-light">
+          <div class="theicons">
+            <ul id="choices">
+              <li id="rock" onclick="game(this)">
+                <img src="assets/game_rpsls/big-lrock.svg" alt="rock" />
+              </li>
+              <li id="paper" onclick="game(this)">
+                <img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />
+              </li>
+              <li id="scissor" onclick="game(this)">
+                <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />
+              </li>
+              <li id="lizard" onclick="game(this)">
+                <img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />
+              </li>
+              <li id="spock" onclick="game(this)">
+                <img src="assets/game_rpsls/big-lspock.svg" alt="spock" />
+              </li>
             </ul>
-          </li>
-          <li id="bot">
-            <span class="icon-android"></span>
-            <ul id="lives">
-              <li><span class="icon-heart"></span></li>
-              <li><span class="icon-heart"></span></li>
-              <li><span class="icon-heart"></span></li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+          <div id="info">
+            <p>Select a move from above to start!<br /><span></span></p>
+          </div>
+          <ul id="scores">
+            <li id="user">
+              <span>
+                <img
+                  src="assets/game_rpsls/smile-solid.svg"
+                  alt="lives"
+                  class="icon-user"
+              /></span>
+
+              <ul id="lives">
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+              </ul>
+            </li>
+            <li id="bot">
+              <span>
+                <img
+                  src="assets/game_rpsls/robot-solid.svg"
+                  alt="lives"
+                  class="icon-android"
+              /></span>
+              <ul id="lives">
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="assets/game_rpsls/heart-solid.svg"
+                      alt="lives"
+                      class="icon-heart"
+                  /></span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- End game section - buttons to other games -->
