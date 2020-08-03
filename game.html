@@ -29,47 +29,60 @@
   </head>
 
   <body>
+
     <header>
       <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
       <h1>Game name</h1>
     </header>
+
     <div class="container">
-      <div class="row">
-        <div class="col-1">
+
+      <div class="row justify-content-between">
+
+        <div class="col-sm-2 text-left">
           <a href="index.html" class="btn btn-outline-warning btn-lg">Home</a>
         </div>
-        <div class="col-11">
+
+        <div class="col-sm-3 text-right">
+
           <div class="btn btn-outline-warning btn-lg" id="score">
             <i class="fas fa-star"></i>&nbsp;&nbsp;Total Score:
           </div>
+
         </div>
+
       </div>
+      
       <!-- Game section -->
-      <div id="game" class="container game"></div>
+      <section id="game" class="game">
+        
+      </section>
 
       <!-- End game section - buttons to other games -->
-      <div class="row">
-        <div class="col-md-4">
-          <a href="game_twentyone.html" class="btn btn-primary bgcolor2"
+      <div class="row pt-4">
+        <div class="col-sm-4">
+          <a href="game_twentyone.html" class="btn btn-primary bgcolor2 form-control"
             ><img class="" src="/assets/game-2-small.svg" />
             &nbsp;twenty-one&nbsp;&nbsp;</a
           >
         </div>
-        <div class="col-md-4">
-          &nbsp;<a href="game_memory.html" class="btn btn-primary bgcolor3"
+        <div class="col-sm-4">
+          <a href="game_memory.html" class="btn btn-primary bgcolor3 form-control"
             ><img
               class=""
               src="/assets/game-3-small.svg"
             />&nbsp;Memory&nbsp;&nbsp;</a
           >
         </div>
-        <div class="col-md-4">
-          &nbsp;<a href="game_movingblock.html" class="btn btn-primary bgcolor4"
+        <div class="col-sm-4">
+         <a href="game_movingblock.html" class="btn btn-primary bgcolor4 form-control"
             ><img class="" src="/assets/game-4-small.svg" />&nbsp;&nbsp;Moving
             block&nbsp;&nbsp;</a
           >
           </div>
         </div>
+
+        
       </div>
     </div>
     <!-- Optional JavaScript -->
