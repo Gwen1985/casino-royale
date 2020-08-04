@@ -18,7 +18,6 @@ html {
 body {
   background-image: radial-gradient(#3a3374, #17142f);
 
-
   font-family: "Nunito", sans-serif;
 }
 
@@ -30,7 +29,7 @@ header {
   text-align: center;
 }
 h1 {
-  font-size: 48pt;
+  font-size: 42pt;
   font-weight: 700;
   color: #f4a91a;
   margin-top: 10px;
