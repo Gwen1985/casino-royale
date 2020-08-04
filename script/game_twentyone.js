@@ -17,15 +17,15 @@ let playerHeaderElement = document.getElementById('playerHeader'),
     stayButton = document.getElementById('stay-button');
 
 // GET GAME SCORE
-const gameName = 'twentyone';
-const playerName = Player.getPlayerName();
+const gameName = 'twentyone',
+    playerName = Player.getPlayerName();
 
-let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, 'score'));
-let gameCountTotal = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_total'));
-let gameCountWin = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_win'));
-let gameCountLoss = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_loss'));
+let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, 'score')),
+    gameCountTotal = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_total')),
+    gameCountWin = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_win')),
+    gameCountLoss = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_loss')),
+    gameScoreElement = document.getElementById('gameScore');
 
-let gameScoreElement = document.getElementById('gameScore');
 gameScoreElement.innerText = gameScore;
 // gameScoreElement.innerText = gameScore + ' - total tries: ' + gameCountTotal + ' (' + gameCountWin + ' wins / ' + gameCountLoss + ' losses)';
 

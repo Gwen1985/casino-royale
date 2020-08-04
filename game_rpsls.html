@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" >
+<head >
     <meta charset="UTF-8" />
 
-    <title>Casino Royale - Jackpot Scripters</title>
+    <title >Casino Royale - Jackpot Scripters</title >
 
     <!-- Bootstrap CSS -->
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
     />
     <!-- style -->
     <link rel="stylesheet" href="style/main.css" />
@@ -18,190 +18,202 @@
     <link rel="stylesheet" href="style/game_rpsls.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
-  </head>
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
+</head >
 
-  <body>
-    <div class="container">
-      <header>
+<body >
+<div class="container" >
+    <header >
         <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
-        <h1>Rock Paper Scissors Lizard Spock</h1>
-      </header>
+        <h1 >Rock Paper Scissors Lizard Spock</h1 >
+    </header >
 
-      <div class="row justify-content-between">
-        <div class="col-sm-2 text-left">
-          <a href="index.html" class="btn btn-outline-warning btn-lg">Home</a>
-        </div>
+    <div class="row justify-content-between" >
+        <div class="col-sm-2 text-left" >
+            <a href="index.html" class="btn btn-outline-warning btn-lg" >Home</a >
+        </div >
 
-        <div class="col-sm-3 text-right">
-          <div class="btn btn-outline-warning btn-lg" id="score">
-            <i class="fas fa-star"></i>&nbsp;&nbsp;Total Score:
-          </div>
-        </div>
-      </div>
+        <div class="col-sm-3 text-right" >
+            <div class="btn btn-outline-warning btn-lg" id="score" >
+                <i class="fas fa-star" ></i >&nbsp;&nbsp;Total Score:  <span id="gameScore"></span>
+            </div >
+        </div >
+    </div >
 
-      <!-- Game section -->
-      <section id="game" class="game">
-        <div class="container-lg bg-light">
-          <div class="theicons">
-            <ul id="choices">
-              <li id="rock" onclick="game(this)">
-                <img src="assets/game_rpsls/big-lrock.svg" alt="rock" />
-              </li>
-              <li id="paper" onclick="game(this)">
-                <img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />
-              </li>
-              <li id="scissor" onclick="game(this)">
-                <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />
-              </li>
-              <li id="lizard" onclick="game(this)">
-                <img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />
-              </li>
-              <li id="spock" onclick="game(this)">
-                <img src="assets/game_rpsls/big-lspock.svg" alt="spock" />
-              </li>
-            </ul>
-          </div>
-          <div id="info">
-            <p>Select a move from above to start!<br /><span></span></p>
-          </div>
-          <ul id="scores">
-            <li id="user">
-              <span>
-                <img
-                  src="assets/game_rpsls/smile-solid.svg"
-                  alt="lives"
-                  class="icon-user"
-              /></span>
+    <!-- Game section -->
+    <section id="gameSection" class="game" >
 
-              <ul id="lives">
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-              </ul>
-            </li>
-            <li id="bot">
-              <span>
-                <img
-                  src="assets/game_rpsls/robot-solid.svg"
-                  alt="lives"
-                  class="icon-android"
-              /></span>
-              <ul id="lives">
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-                <li>
-                  <span>
-                    <img
-                      src="assets/game_rpsls/heart-solid.svg"
-                      alt="lives"
-                      class="icon-heart"
-                  /></span>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <div class="row p-4" >
+            <div class="col-12" >
+                <button id="newgame-button" class="btn btn-primary " >New game</button >
+            </div >
+        </div >
 
-      <!-- End game section - buttons to other games -->
-      <div class="row pt-4">
-        <div class="col-sm-4">
-          <a
-            href="game_twentyone.html"
-            class="btn btn-primary bgcolor2 form-control"
+        <div id="description" class="row p-4" >
+            <div class="col-12 text-left" >
+                <p >It's like Rock, Paper, Scissors, but more fun!</p >
+                <p >Each player picks a variable and reveals it at the same time. The winner is the one who defeats
+                    the others. In a tie, the process is repeated until a winner is found.</p >
+                <ul class="" >
+                    <li ><i class="fas fa-caret-right" ></i > Scissors cuts Paper</li >
+                    <li ><i class="fas fa-caret-right" ></i > Paper covers Rock</li >
+                    <li ><i class="fas fa-caret-right" ></i > Rock crushes Lizard</li >
+                    <li ><i class="fas fa-caret-right" ></i > Lizard poisons Spock</li >
+                    <li ><i class="fas fa-caret-right" ></i > Spock smashes Scissors</li >
+                    <li ><i class="fas fa-caret-right" ></i > Scissors decapitates Lizard</li >
+                    <li ><i class="fas fa-caret-right" ></i > Lizard eats Paper</li >
+                    <li ><i class="fas fa-caret-right" ></i > Paper disproves Spock</li >
+                    <li ><i class="fas fa-caret-right" ></i > Spock vaporizes Rock</li >
+                    <li ><i class="fas fa-caret-right" ></i > Rock crushes Scissors</li >
+                </ul >
+            </div >
+        </div >
+
+        <div id="game" >
+
+            <div class="row theicons" >
+                <div class="col-12" >
+                    <ul id="choices" >
+                        <li id="rock" onclick="game(this)" >
+                            <img src="assets/game_rpsls/big-lrock.svg" alt="rock" />
+                        </li >
+                        <li id="paper" onclick="game(this)" >
+                            <img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />
+                        </li >
+                        <li id="scissor" onclick="game(this)" >
+                            <img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />
+                        </li >
+                        <li id="lizard" onclick="game(this)" >
+                            <img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />
+                        </li >
+                        <li id="spock" onclick="game(this)" >
+                            <img src="assets/game_rpsls/big-lspock.svg" alt="spock" />
+                        </li >
+                    </ul >
+                </div >
+            </div >
+
+            <div id="info" >
+                <!--<p >Select a move from above to start!<br /><span ></span ></p >-->
+                <p id="infoText"></p>
+            </div >
+
+            <ul id="scores" >
+
+                <li id="user" >
+                    <span ><img src="assets/game_rpsls/smile-solid.svg" alt="lives" class="icon-user" /></span >
+                    <ul id="lives" >
+                        <li >
+                            <span >
+                                <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                            </span >
+                        </li >
+                        <li >
+                            <span >
+                                <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                            </span >
+                        </li >
+                        <li >
+                            <span >
+                                <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                            </span >
+                        </li >
+                    </ul >
+                </li >
+
+                <li id="bot" >
+                    <span ><img src="assets/game_rpsls/robot-solid.svg" alt="lives" class="icon-android" /></span >
+                    <ul id="lives" >
+                        <li >
+                          <span >
+                            <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                          </span >
+                        </li >
+                        <li >
+                          <span >
+                            <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                          </span >
+                        </li >
+                        <li >
+                          <span >
+                            <img src="assets/game_rpsls/heart-solid.svg" alt="lives" class="icon-heart" />
+                          </span >
+                        </li >
+
+                    </ul >
+
+                </li >
+
+            </ul >
+
+        </div >
+
+    </section >
+
+    <!-- End game section - buttons to other games -->
+    <div class="row pt-4" >
+        <div class="col-sm-4" >
+            <a
+                    href="game_twentyone.html"
+                    class="btn btn-primary bgcolor2 form-control"
             ><img class="" src="assets/game-2-small.svg" width="8%" />
-            &nbsp;twenty-one&nbsp;&nbsp;</a
-          >
-        </div>
-        <div class="col-sm-4">
-          <a
-            href="game_memory.html"
-            class="btn btn-primary bgcolor3 form-control"
+                &nbsp;twenty-one&nbsp;&nbsp;</a
+            >
+        </div >
+        <div class="col-sm-4" >
+            <a
+                    href="game_memory.html"
+                    class="btn btn-primary bgcolor3 form-control"
             ><img
-              class=""
-              src="assets/game-3-small.svg"
-              width="10%"
+                    class=""
+                    src="assets/game-3-small.svg"
+                    width="10%"
             />&nbsp;Memory&nbsp;&nbsp;</a
-          >
-        </div>
-        <div class="col-sm-4">
-          <a
-            href="game_movingblock.html"
-            class="btn btn-primary bgcolor4 form-control"
+            >
+        </div >
+        <div class="col-sm-4" >
+            <a
+                    href="game_movingblock.html"
+                    class="btn btn-primary bgcolor4 form-control"
             ><img
-              class=""
-              src="assets/game-4-small.svg"
-              width="10%"
+                    class=""
+                    src="assets/game-4-small.svg"
+                    width="10%"
             />&nbsp;&nbsp;Moving block&nbsp;&nbsp;</a
-          >
-        </div>
-      </div>
+            >
+        </div >
+    </div >
 
-      <!-- Footer -->
-      <footer>
-        <p class="footer">© BeCode JackpotScripters</p>
-      </footer>
-    </div>
-    <!-- END DIV -->
+    <!-- Footer -->
+    <footer >
+        <p class="footer" >© BeCode JackpotScripters</p >
+    </footer >
+</div >
+<!-- END DIV -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script >
+<script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+></script >
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"
+></script >
 
-    <script src="script/lib_player.js"></script>
-    <script src="script/game_rpsls.js"></script>
-  </body>
-</html>
+<script src="script/lib_player.js" ></script >
+<script src="script/game_rpsls.js" ></script >
+
+</body >
+</html >

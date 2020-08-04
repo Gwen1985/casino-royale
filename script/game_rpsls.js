@@ -1,133 +1,295 @@
-let text = document.getElementsByTagName("P");
+// DOM VARIABLES
+let text = document.getElementsByTagName("P"),
+    newgameButton = document.getElementById('newgame-button'),
+    descriptionElement = document.getElementById('description'),
+    gameElement = document.getElementById('game');
+
 text = text[0];
-let userLives = 0;
-let botLives = 0;
+
+// GET GAME SCORE
+const gameName = 'rpsls',
+    playerName = Player.getPlayerName();
+
+let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, 'score')),
+    gameCountTotal = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_total')),
+    gameCountWin = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_win')),
+    gameCountLoss = parseInt(Player.getPlayerGameScoreItem(gameName, 'count_loss')),
+    gameScoreElement = document.getElementById('gameScore');
+
+gameScoreElement.innerText = gameScore;
+// gameScoreElement.innerText = gameScore + ' - total tries: ' + gameCountTotal + ' (' + gameCountWin + ' wins / ' + gameCountLoss + ' losses)';
+
+// GAME VARIABLES
+let userLives = 0,
+    botLives = 0,
+    endGame = false;
+
+gameElement.style.display = 'none';
+
+newgameButton.onclick = () => {
+    console.log('New game started');
+    newgameButton.style.display = 'none';
+    descriptionElement.style.display = 'none';
+    gameElement.style.display = 'block';
+    let lifeElements = document.getElementsByClassName("icon-heart");
+    lifeElements[0].style.display = "inline";
+    lifeElements[1].style.display = "inline";
+    lifeElements[2].style.display = "inline";
+    lifeElements[3].style.display = "inline";
+    lifeElements[4].style.display = "inline";
+    lifeElements[5].style.display = "inline";
+    endGame = false;
+};
 
 function game(choice) {
-  let choices = ["rock", "paper", "scissors", "lizard", "spock"];
-  let result, userChoice, computerChoice;
-  userChoice = choice.id;
-  computerChoice = Math.floor(Math.random() * choices.length);
 
-  const userWins =
-    "Bot: " + choices[computerChoice] + "<span> YOU WIN !!</span>";
-  const botWins =
-    "Bot: " + choices[computerChoice] + "<span> YOU LOSE !!</span>";
-  const draw = "Bot: " + choices[computerChoice] + "<span> DRAW</span>";
+    let choices = ["rock", "paper", "scissors", "lizard", "spock"];
+    let result, userChoice, computerChoice;
+    userChoice = choice.id;
+    computerChoice = Math.floor(Math.random() * choices.length);
 
-  switch (computerChoice) {
-    case 0:
-      // Rock
-      if (userChoice == "paper" || userChoice == "spock") {
-        result = userWins;
-      } else if (userChoice == "rock") {
-        result = draw;
-      } else {
-        result = botWins;
-      }
-      break;
+    // const userWins = "Bot: " + choices[computerChoice] + "<span> YOU WIN!!!</span>";
+    // const botWins = "Bot: " + choices[computerChoice] + "<span> YOU LOSE!!!</span>";
+    // const draw = "Bot: " + choices[computerChoice] + "<span> DRAW</span>";
 
-    case 1:
-      // Paper
-      if (userChoice == "scissor" || userChoice == "lizard") {
-        result = userWins;
-      } else if (userChoice == "paper") {
-        result = draw;
-      } else {
-        result = botWins;
-      }
-      break;
+    result = getResult(userChoice, computerChoice);
 
-    case 2:
-      // Scissors
-      if (userChoice == "spock" || userChoice == "rock") {
-        result = userWins;
-      } else if (userChoice == "scissor") {
-        result = draw;
-      } else {
-        result = botWins;
-      }
-      break;
+    // switch (computerChoice) {
+    //     case 0:
+    //         // Rock
+    //         if (userChoice === "paper" || userChoice === "spock") {
+    //             result = userWins;
+    //         } else if (userChoice === "rock") {
+    //             result = draw;
+    //         } else {
+    //             result = botWins;
+    //         }
+    //         break;
+    //
+    //     case 1:
+    //         // Paper
+    //         if (userChoice === "scissor" || userChoice === "lizard") {
+    //             result = userWins;
+    //         } else if (userChoice === "paper") {
+    //             result = draw;
+    //         } else {
+    //             result = botWins;
+    //         }
+    //         break;
+    //
+    //     case 2:
+    //         // Scissors
+    //         if (userChoice === "spock" || userChoice === "rock") {
+    //             result = userWins;
+    //         } else if (userChoice === "scissor") {
+    //             result = draw;
+    //         } else {
+    //             result = botWins;
+    //         }
+    //         break;
+    //
+    //     case 3:
+    //         // Lizard
+    //         if (userChoice === "rock" || userChoice === "scissor") {
+    //             result = userWins;
+    //         } else if (userChoice === "lizard") {
+    //             result = draw;
+    //         } else {
+    //             result = botWins;
+    //         }
+    //         break;
+    //
+    //     case 4:
+    //         // Spock
+    //         if (userChoice === "lizard" || userChoice === "paper") {
+    //             result = userWins;
+    //         } else if (userChoice === "spock") {
+    //             result = draw;
+    //         } else {
+    //             result = botWins;
+    //         }
+    //         break;
+    //
+    //     default:
+    //         result = "";
+    // }
 
-    case 3:
-      // Lizard
-      if (userChoice == "rock" || userChoice == "scissor") {
-        result = userWins;
-      } else if (userChoice == "lizard") {
-        result = draw;
-      } else {
-        result = botWins;
-      }
-      break;
+    if (!endGame) {
 
-    case 4:
-      // Spock
-      if (userChoice == "lizard" || userChoice == "paper") {
-        result = userWins;
-      } else if (userChoice == "spock") {
-        result = draw;
-      } else {
-        result = botWins;
-      }
-      break;
+        const userWinsText = "Bot: " + choices[computerChoice] + "<span> YOU WIN!!!</span>";
+        const botWinsText = "Bot: " + choices[computerChoice] + "<span> YOU LOSE!!!</span>";
+        const drawText = "Bot: " + choices[computerChoice] + "<span> DRAW</span>";
 
-    default:
-      result = "";
-  }
+        // switch (result) {
+        //     case 'userWins': {
+        //         text.style.color = "#309B9C";
+        //         choice.style.background = "#309B9C";
+        //         text.innerHTML = userWinsText;
+        //         console.log(text.innerHTML);
+        //         setTimeout(function () {
+        //             choice.style.background = "";
+        //         }, 1000);
+        //         // styleChoice("green");
+        //         break;
+        //     }
+        //
+        //     case 'dealerWins': {
+        //         text.style.color = "#CF293C";
+        //         choice.style.background = "#CF293C";
+        //         text.innerHTML = botWinsText;
+        //         console.log(text.innerHTML);
+        //         setTimeout(function () {
+        //             choice.style.background = "";
+        //         }, 1000);
+        //         //styleChoice("red");
+        //         break;
+        //     }
+        //
+        //     default: {
+        //         text.style.color = "#6029CF";
+        //         choice.style.background = "#6029CF";
+        //         text.innerHTML = drawText;
+        //         console.log(text.innerHTML);
+        //         setTimeout(function () {
+        //             choice.style.background = "";
+        //         }, 1000);
+        //         //styleChoice ("white");
+        //         break;
+        //     }
+        // }
 
-  if (result == userWins) {
-    text.style.color = "#309B9C";
-    choice.style.background = "#309B9C";
-    text.innerHTML = result;
-    setTimeout(function () {
-      choice.style.background = "";
-    }, 1000);
-    // styleChoice("green");
-  } else if (result == botWins) {
-    text.style.color = "#CF293C";
-    choice.style.background = "#CF293C";
-    text.innerHTML = result;
-    setTimeout(function () {
-      choice.style.background = "";
-    }, 1000);
-    //styleChoice("red");
-  } else if (result == draw) {
-    text.style.color = "#6029CF";
-    choice.style.background = "#6029CF";
-    text.innerHTML = result;
-    setTimeout(function () {
-      choice.style.background = "";
-    }, 1000);
-    //styleChoice ("white");
-  }
-  score(result, userWins, botWins);
+        if (result === 'userWins') {
+            styleChoice(choice, "#309B9C", userWinsText);
+        }
+        else if (result === 'botWins') {
+            styleChoice(choice, "#CF293C", botWinsText);
+        }
+        else {
+            styleChoice(choice, "#6029CF", drawText);
+        }
+
+        getScore(result);
+    }
 }
 
-// function styleChoice(color) {
-//     // text.style.color = color;
-//     // choice.style.background = color;
-//     // setTimeout(function () {
-//     //     choice.style.background = "";
-//     // }, 1000);
-// }
+function styleChoice(choice, color, text) {
+    let testchoiceElement = document.getElementById(choice.id);
+    let textElement = document.getElementById('infoText');
 
-function score(result, userWins, botWins) {
-  const life = document.getElementsByClassName("icon-heart");
-  if (result === userWins) {
-    life[botLives++ + 3].style.display = "none";
-  } else if (result === botWins) {
-    life[userLives++].style.display = "none";
-  }
-  if (botLives === 3 || userLives === 3) {
-    if (userLives === 3) {
-      text.innerHTML += "<span>Better Luck Next Time! Bot Wins!</span>";
-    } else {
-      text.innerHTML += "<span>Some good luck you got there!</span>";
+    textElement.style.color = color;
+    textElement.innerHTML = text;
+
+    testchoiceElement.style.background = color;
+    setTimeout(function () {
+        testchoiceElement.style.background = "";
+    }, 1000);
+
+}
+
+function getScore(result) {
+
+    const lifeElements = document.getElementsByClassName("icon-heart");
+    if (result === 'userWins') {
+        lifeElements[botLives++ + 3].style.display = "none";
     }
-    for (let i = life.length - 1; i >= 0; i--) {
-      life[i].style.color = "rgb(255,0,0)";
-      botLives = 0;
-      userLives = 0;
+    else if (result === 'botWins') {
+        lifeElements[userLives++].style.display = "none";
     }
-  }
+
+    // END OF GAME
+    if (botLives === 3 || userLives === 3) {
+        gameCountTotal += 1;
+        if (userLives === 3) {
+            text.innerHTML += "<span>Better Luck Next Time! Bot Wins!</span>";
+            gameCountLoss += 1;
+        }
+        else {
+            text.innerHTML += "<span>Some good luck you got there!</span>";
+            gameScore += 100;
+            gameCountWin += 1;
+        }
+
+        Player.setPlayerGameScoreItem(gameName, 'score', gameScore);
+        Player.setPlayerGameScoreItem(gameName, 'count_total', gameCountTotal);
+        Player.setPlayerGameScoreItem(gameName, 'count_win', gameCountWin);
+        Player.setPlayerGameScoreItem(gameName, 'count_loss', gameCountLoss);
+        gameScoreElement.innerText = gameScore;
+
+        endGame = true;
+        newgameButton.style.display = 'inline';
+        console.log("Game ended");
+
+        for (let i = lifeElements.length - 1; i >= 0; i--) {
+            //lifeElements[i].style.color = "rgb(255,0,0)";
+            lifeElements[i].style.color = "yellow";
+            botLives = 0;
+            userLives = 0;
+        }
+    }
+}
+
+function getResult(userChoice, computerChoice) {
+
+    let result = '';
+    switch (computerChoice) {
+        case 0:
+            // Rock
+            if (userChoice === "paper" || userChoice === "spock") {
+                result = 'userWins';
+            } else if (userChoice === "rock") {
+                result = 'draw';
+            } else {
+                result = 'botWins';
+            }
+            break;
+
+        case 1:
+            // Paper
+            if (userChoice === "scissor" || userChoice === "lizard") {
+                result = 'userWins';
+            } else if (userChoice === "paper") {
+                result = 'draw';
+            } else {
+                result = 'botWins';
+            }
+            break;
+
+        case 2:
+            // Scissors
+            if (userChoice === "spock" || userChoice === "rock") {
+                result = 'userWins';
+            } else if (userChoice === "scissor") {
+                result = 'draw';
+            } else {
+                result = 'botWins';
+            }
+            break;
+
+        case 3:
+            // Lizard
+            if (userChoice === "rock" || userChoice === "scissor") {
+                result = 'userWins';
+            } else if (userChoice === "lizard") {
+                result = 'draw';
+            } else {
+                result = 'botWins';
+            }
+            break;
+
+        case 4:
+            // Spock
+            if (userChoice === "lizard" || userChoice === "paper") {
+                result = 'userWins';
+            } else if (userChoice === "spock") {
+                result = 'draw';
+            } else {
+                result = 'botWins';
+            }
+            break;
+
+        default:
+            result = '';
+    }
+
+    return result
 }
