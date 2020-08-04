@@ -11,10 +11,10 @@ class Player {
     static generatePlayerScore(x) {
 
         let game = (game) => {
-            this.score = 'cr_' + x._safePlayerName + '_' + game.toLowerCase() + '_score';
-            this.count_total = 'cr_' + x._safePlayerName + '_' + game.toLowerCase() + '_count_total';
-            this.count_win = 'cr_' + x._safePlayerName + '_' + game.toLowerCase() + '_count_win';
-            this.count_loss = 'cr_' + x._safePlayerName + '_' + game.toLowerCase() + '_count_loss';
+            this.score = 'cr_' + game.toLowerCase() + '_score';
+            this.count_total = 'cr_' + game.toLowerCase() + '_count_total';
+            this.count_win = 'cr_' + game.toLowerCase() + '_count_win';
+            this.count_loss = 'cr_' + game.toLowerCase() + '_count_loss';
 
             return {
                 score: this.score,
@@ -28,10 +28,12 @@ class Player {
             x.playerGames.push(game(elementGame));
         });
 
-        let lsPlayerNameKey = 'cr_' + x._safePlayerName + '_name';
-        if (!localStorage.hasOwnProperty(lsPlayerNameKey)) {
+        let lsPlayerID = 'cr_player_id';
+        let lsPlayerName = 'cr_player_name';
+        if (!localStorage.hasOwnProperty(lsPlayerName)) {
             console.log('Creating localStorage set for user.');
-            localStorage.setItem(lsPlayerNameKey, x.playerName);
+            localStorage.setItem(lsPlayerName, x.playerName);
+            localStorage.setItem(lsPlayerID, x._safePlayerName);
             x.playerGames.forEach((elementGame) => {
                 localStorage.setItem(elementGame.score, '0');
                 localStorage.setItem(elementGame.count_total, '0');
@@ -44,18 +46,22 @@ class Player {
         }
     }
 
-    getPlayerGameScoreItem(gameName, gameKey) {
-        return localStorage.getItem('cr_' + this._safePlayerName + '_' + gameName + '_' + gameKey);
+    static getPlayerName() {
+        return  localStorage.getItem('cr_player_id');
     }
 
-    setPlayerGameScoreItem(gameName, gameKey, gameValue) {
-        localStorage.setItem('cr_' + this._safePlayerName + '_' + gameName + '_' + gameKey, gameValue);
+    static getPlayerGameScoreItem(gameName, gameKey) {
+        return localStorage.getItem('cr_' + gameName + '_' + gameKey);
+    }
+
+    static setPlayerGameScoreItem(gameName, gameKey, gameValue) {
+        localStorage.setItem('cr_' + gameName + '_' + gameKey, gameValue);
     }
 
     getPlayerTotalScore() {
         let totalScore = 0;
         this._installedGames.forEach((gameElement) => {
-            totalScore += parseInt(localStorage.getItem('cr_' + this._safePlayerName + '_' + gameElement + '_score'));
+            totalScore += parseInt(localStorage.getItem('cr_' + gameElement + '_score'));
         });
 
         return totalScore;
