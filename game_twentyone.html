@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head >
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
 
-    <title >Casino Royale - Jackpot Scripters</title >
+    <title>Casino Royale - Jackpot Scripters</title>
 
     <!-- Bootstrap CSS -->
     <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
     />
     <!-- style -->
     <link rel="stylesheet" href="style/main.css" />
@@ -18,42 +18,43 @@
     <link rel="stylesheet" href="style/game_twentyone.css" />
 
     <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
-</head >
+  </head>
 
-<body >
-
-<div class="container" >
-
-    <header >
+  <body>
+    <div class="container">
+      <header>
         <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
-        <h1 >Twenty-One</h1 >
-    </header >
+        <h1>Twenty-One</h1>
+      </header>
 
-    <div class="row justify-content-between" >
-        <div class="col-sm-2 text-left" >
-            <a href="index.html" class="btn btn-outline-warning btn-lg" >Home</a >
-        </div >
+      <div class="row justify-content-between">
+        <div class="col-sm-2 text-left">
+          <a href="index.html" class="btn btn-outline-warning btn-lg">Home</a>
+        </div>
 
-        <div class="col-sm-3 text-right" >
-            <div class="btn btn-outline-warning btn-lg" id="score" >
-                <i class="far fa-star"></i>&nbsp;&nbsp;Total Score: <span id="gameScore"></span>
-            </div >
-        </div >
-    </div >
+        <div class="col-sm-3 text-right">
+          <div class="btn btn-outline-warning btn-lg" id="score">
+            <i class="far fa-star"></i>&nbsp;&nbsp;Total Score:
+            <span id="gameScore"></span>
+          </div>
+        </div>
+      </div>
 
-    <!-- Game section -->
-    <section id="gameSection" class="game" >
-
-        <div class="row p-4" >
-            <div class="col-md-6" >
-                <h1 id="playerHeader" >Player</h1 >
-                <div id="playerDeck" class="card-deck" ></div >
-                <div id="playerScore" class="p-3 mb-2 bg-light text-dark rounded" ></div >
-            </div >
+      <!-- Game section -->
+      <section id="gameSection" class="game">
+        <div class="row p-4">
+          <div class="col-md-6">
+            <h1 id="playerHeader">Player</h1>
+            <div id="playerDeck" class="card-deck"></div>
+            <div
+              id="playerScore"
+              class="p-3 mb-2 bg-light text-light rounded"
+            ></div>
+          </div>
 
           <div class="col-md-6">
             <h1 id="dealerHeader">Dealer</h1>
@@ -110,36 +111,32 @@
         </div>
       </div>
 
-    <!-- Footer -->
-    <footer >
-        <p class="footer" >© BeCode JackpotScripters</p >
-    </footer >
+      <!-- Footer -->
+      <footer>
+        <p class="footer">© BeCode JackpotScripters</p>
+      </footer>
+    </div>
 
-</div >
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-></script >
-<script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"
-></script >
-<script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"
-></script >
-
-<script src="script/lib_player.js" ></script >
-<script src="script/lib_carddeck.js" ></script >
-<script src="script/game_twentyone.js" ></script >
-
-</body >
-
-</html >
-
+    <script src="script/lib_player.js"></script>
+    <script src="script/lib_carddeck.js"></script>
+    <script src="script/game_twentyone.js"></script>
+  </body>
+</html>

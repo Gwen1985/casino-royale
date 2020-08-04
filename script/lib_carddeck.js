@@ -77,16 +77,16 @@ class cardDeck {
 
   renderCard(dealt_card) {
     let cardElement = "";
-    cardElement += '<div class="card border-0" style="max-width: 6rem;">';
+    cardElement += '<div class="card border-0" style="max-width: 5rem;">';
     cardElement += '<div class="card-body singleCard">';
     cardElement += '<span class="value">' + dealt_card.value + "</span>";
     cardElement +=
       '<span class="suit ' + dealt_card.suit.toLowerCase() + '"></span>';
     cardElement += "</div>";
-    cardElement +=
-      '<div class="card-footer-header text-left" ><small class="text-muted">' +
-      dealt_card.name +
-      "</small></div>";
+    // cardElement +=
+    //   '<div class="card-footer-header text-left" ><small class="text-muted">' +
+    //   dealt_card.name +
+    //   "</small></div>";
     cardElement += "</div>";
 
     return cardElement;
