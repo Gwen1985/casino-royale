@@ -1,42 +1,49 @@
+h1 {
+  font-size: 42pt;
+  font-weight: 700;
+  color: #f4a91a;
+  margin-top: 10px;
+}
+
 .singleCard {
-    /*width: 95px;*/
-    width: 6rem;
-    height: 150px;
-    /*float: left;*/
-    /*margin: 5px;*/
-    padding: 5px;
-    background-color: white;
-    border: solid 1px #aaa;
-    border-radius: 10px;
+  /*width: 95px;*/
+  width: 6rem;
+  height: 150px;
+  /*float: left;*/
+  /*margin: 5px;*/
+  padding: 5px;
+  background-color: white;
+  border: solid 1px #aaa;
+  border-radius: 10px;
 }
 
 .singleCard .value {
-    font-size: 15pt;
-    font-family: sans-serif;
+  font-size: 15pt;
+  font-family: sans-serif;
 }
 
 .singleCard .suit {
-    font-size: 120px;
-    text-align: center;
-    line-height: 0.8;
+  font-size: 120px;
+  text-align: center;
+  line-height: 0.8;
 }
 
 .singleCard .hearts:after {
-    content: "\2665";
-    color: red;
+  content: "\2665";
+  color: red;
 }
 
 .singleCard .spades:after {
-    content: "\2660";
-    color: black;
+  content: "\2660";
+  color: black;
 }
 
 .singleCard .diamonds:after {
-    content: "\2666";
-    color: red;
+  content: "\2666";
+  color: red;
 }
 
 .singleCard .clubs:after {
-    content: "\2663";
-    color: black;
+  content: "\2663";
+  color: black;
 }
