@@ -1,42 +1,93 @@
+#playerHeader {
+  text-align: left;
+}
+
+#dealerHeader {
+  text-align: left;
+}
+
+#newgame-button {
+  margin-top: 50px;
+}
+
+#playerScore {
+  margin-top: 20px;
+  background-image: linear-gradient(to right, #2783ca, #2d96d8);
+  font-weight: 600;
+  font-size: 16pt;
+}
+
+#dealerScore {
+  margin-top: 20px;
+  background-image: linear-gradient(to right, #2783ca, #2d96d8);
+  font-weight: 600;
+  font-size: 16pt;
+}
+
+.text-muted {
+  color: tomato !important;
+}
+
+#hit-button {
+  background-color: #2c8d92;
+}
+
+#hit-button:hover {
+  background-color: #3dc2c9;
+}
+
+#stay-button {
+  background-color: #cc1f47;
+}
+
+#stay-button:hover {
+  background-color: #f02554;
+}
+
 .singleCard {
-    /*width: 95px;*/
-    width: 6rem;
-    height: 150px;
-    /*float: left;*/
-    /*margin: 5px;*/
-    padding: 5px;
-    background-color: white;
-    border: solid 1px #aaa;
-    border-radius: 10px;
+  /*width: 95px;*/
+  width: 6rem;
+  height: 150px;
+  /*float: left;*/
+  /*margin: 5px;*/
+  padding: 5px;
+  background-color: white;
+  border: solid 2px #409fda;
+  border-radius: 10px;
 }
 
 .singleCard .value {
-    font-size: 15pt;
-    font-family: sans-serif;
+  font-size: 15pt;
+  font-family: sans-serif;
+
+  font-weight: 800;
+  margin-left: 17px;
+  position: absolute;
 }
 
 .singleCard .suit {
-    font-size: 120px;
-    text-align: center;
-    line-height: 0.8;
+  font-size: 40px;
+
+  text-align: center;
+  line-height: 3.4;
 }
 
 .singleCard .hearts:after {
-    content: "\2665";
-    color: red;
+  content: "\2665";
+  color: #cc1f47;
 }
 
 .singleCard .spades:after {
-    content: "\2660";
-    color: black;
+  content: "\2660";
+  color: #1d193e;
 }
 
 .singleCard .diamonds:after {
-    content: "\2666";
-    color: red;
+  content: "\2666";
+  color: #cc1f47;
 }
 
 .singleCard .clubs:after {
-    content: "\2663";
-    color: black;
+  content: "\2663";
+  color: #1d193e;
 }

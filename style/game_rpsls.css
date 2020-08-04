@@ -1,3 +1,10 @@
+h1 {
+  font-size: 42pt;
+  font-weight: 700;
+  color: #f4a91a;
+  margin-top: 10px;
+}
+
 .container-lg  {
     background-color: #fff;
 }
