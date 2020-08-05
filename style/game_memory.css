@@ -46,7 +46,8 @@ h4 {
 }
 
 p {
-  font-size: 16pt;
+  font-size: 14pt;
+  color: #fff;
 }
 
 #score {
@@ -120,6 +121,7 @@ p {
   transform-style: preserve-3d;
   transition: transform 0.5s;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .memory-card:active {
