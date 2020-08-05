@@ -14,7 +14,9 @@ let playerHeaderElement = document.getElementById("playerHeader"),
   dealerScoreElement = document.getElementById("dealerScore"),
   newgameButton = document.getElementById("newgame-button"),
   hitButton = document.getElementById("hit-button"),
-  stayButton = document.getElementById("stay-button");
+  stayButton = document.getElementById("stay-button"),
+  descriptionElement = document.getElementById("description"),
+  gameElement = document.getElementById("game");
 
 // GET GAME SCORE
 const gameName = "twentyone",
@@ -49,6 +51,7 @@ dealerHeaderElement.style.display = "none";
 dealerScoreElement.style.display = "none";
 hitButton.style.display = "none";
 stayButton.style.display = "none";
+gameElement.style.display = "none";
 
 showStatus();
 
@@ -73,6 +76,9 @@ newgameButton.onclick = () => {
   newgameButton.style.display = "none";
   hitButton.style.display = "inline";
   stayButton.style.display = "inline";
+  descriptionElement.style.display = "none";
+  document.getElementById("gameSection").classList.remove("bgcolor2");
+  gameElement.style.display = "block";
 
   showStatus();
 };

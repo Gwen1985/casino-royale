@@ -45,34 +45,71 @@
       </div>
 
       <!-- Game section -->
-      <section id="gameSection" class="game">
-        <div class="row p-4">
-          <div class="col-md-6">
-            <h1 id="playerHeader">Player</h1>
-            <div id="playerDeck" class="card-deck"></div>
-            <div
-              id="playerScore"
-              class="p-3 mb-2 bg-light text-light rounded"
-            ></div>
+      <section id="gameSection" class="game bgcolor2">
+        <div id="description" class="row p-4">
+          <div class="col-12 text-left">
+            <h4>Game rules</h4>
+            <p>
+              Beat the dealer’s hand without going over 21.
+            </p>
+            <p>
+              After shuffling the deck, you and the dealer are dealt two cards. Add up your cards' total. </br>"Hitting" is requesting another card and is optional but could help you
+              win the hand if your initial deal was a low value. You may Hit any number of times. Do this until you are satisfied with your card total or bust.  </br>"Staying" is keeping the hand you've been dealt. It can be done as soon as you are satisfied with your card count. </br>If either the player or the dealer exceed 21 or “bust” the hand automatically loses. If both the dealer and player bust, the player loses. 
+            </p><p>Card values are as follows:
+            </p>
+            <ul class="">
+              <li>
+                <i class="fas fa-caret-right"></i> Ace: 1 or 11 (your choice)
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i> 2-10: Respectively (2 = 2; 3
+                = 3; etc.)
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i> Jacks, Queens, and Kings: 10
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="game">
+          <div class="row p-4">
+            <div class="col-md-6">
+              <img src="assets/game_rpsls/smile-solid.svg" alt="lives" class="icon-user" width="25%" />
+              <h5 id="playerHeader" class="pb-2 yellow" ></h5>
+              <div id="playerDeck" class="card-deck"></div>
+              <div
+                id="playerScore"
+                class="p-3 mb-2 bg-light text-light rounded"
+              ></div>
+            </div>
+
+            <div class="col-md-6">
+              <img src="assets/game_rpsls/robot-solid.svg" alt="lives" class="icon-android" width="25%" />
+                    <h5 id="dealerHeader" class="pb-2 yellow" ></h5 >
+              <div id="dealerDeck" class="card-deck"></div>
+              <div
+                id="dealerScore"
+                class="p-3 mb-2 bg-light text-light rounded"
+              ></div>
+            </div>
           </div>
 
-          <div class="col-md-6">
-            <h1 id="dealerHeader">Dealer</h1>
-            <div id="dealerDeck" class="card-deck"></div>
-            <div
-              id="dealerScore"
-              class="p-3 mb-2 bg-light text-light rounded"
-            ></div>
+          <div class="row p-4">
+            <div class="col-12">
+
+              <button id="hit-button" class="btn btn-success">Hit</button>
+              <button id="stay-button" class="btn btn-danger">Stay</button>
+            </div>
           </div>
         </div>
 
         <div class="row p-4">
           <div class="col-12">
             <button id="newgame-button" class="btn btn-primary">
-              New game
+              <img class="" src="assets/game-2-small.svg" width="25%" />New game
             </button>
-            <button id="hit-button" class="btn btn-success">Hit</button>
-            <button id="stay-button" class="btn btn-danger">Stay</button>
+            
           </div>
         </div>
       </section>
