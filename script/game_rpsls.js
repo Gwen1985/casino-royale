@@ -6,6 +6,11 @@ let text = document.getElementsByTagName("P"),
 
 text = text[0];
 
+// testing
+
+let choices = ["rock", "paper", "scissors", "lizard", "spock"];
+
+
 // GET GAME SCORE
 const gameName = 'rpsls',
     playerName = Player.getPlayerName();
@@ -25,12 +30,15 @@ let userLives = 0,
     endGame = false;
 
 gameElement.style.display = 'none';
+generateChoicesList();
 
 newgameButton.onclick = () => {
     console.log('New game started');
     newgameButton.style.display = 'none';
     descriptionElement.style.display = 'none';
+    document.getElementById('gameSection').classList.remove('bgcolor1');
     gameElement.style.display = 'block';
+
     let lifeElements = document.getElementsByClassName("icon-heart");
     lifeElements[0].style.display = "inline";
     lifeElements[1].style.display = "inline";
@@ -47,10 +55,6 @@ function game(choice) {
     let result, userChoice, computerChoice;
     userChoice = choice.id;
     computerChoice = Math.floor(Math.random() * choices.length);
-
-    // const userWins = "Bot: " + choices[computerChoice] + "<span> YOU WIN!!!</span>";
-    // const botWins = "Bot: " + choices[computerChoice] + "<span> YOU LOSE!!!</span>";
-    // const draw = "Bot: " + choices[computerChoice] + "<span> DRAW</span>";
 
     result = getResult(userChoice, computerChoice);
 
@@ -292,4 +296,22 @@ function getResult(userChoice, computerChoice) {
     }
 
     return result
+}
+
+function generateChoicesList() {
+    let ul = document.getElementById("choices");
+    ul.setAttribute('id', 'choices');
+
+    for (let i = 0; i < choices.length; i++) {
+        let img = document.createElement('img');
+        img.setAttribute('src', 'assets/game_rpsls/big-l' + choices[i] + '.svg');
+        img.setAttribute('alt', choices[i]);
+
+        let li = document.createElement('li');
+        li.setAttribute('id', choices[i]);
+        li.setAttribute('onclick', 'game(this)');
+        li.appendChild(img);
+
+        ul.appendChild(li);
+    }
 }
