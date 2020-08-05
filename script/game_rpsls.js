@@ -1,15 +1,11 @@
 // DOM VARIABLES
 let text = document.getElementsByTagName("P"),
+    infoTextElement = document.getElementById('infoText'),
     newgameButton = document.getElementById('newgame-button'),
     descriptionElement = document.getElementById('description'),
     gameElement = document.getElementById('game');
 
 text = text[0];
-
-// testing
-
-let choices = ["rock", "paper", "scissors", "lizard", "spock"];
-
 
 // GET GAME SCORE
 const gameName = 'rpsls',
@@ -25,7 +21,8 @@ gameScoreElement.innerText = gameScore;
 // gameScoreElement.innerText = gameScore + ' - total tries: ' + gameCountTotal + ' (' + gameCountWin + ' wins / ' + gameCountLoss + ' losses)';
 
 // GAME VARIABLES
-let userLives = 0,
+let choices = ["rock", "paper", "scissors", "lizard", "spock"],
+    userLives = 0,
     botLives = 0,
     endGame = false;
 
@@ -38,6 +35,7 @@ newgameButton.onclick = () => {
     descriptionElement.style.display = 'none';
     document.getElementById('gameSection').classList.remove('bgcolor1');
     gameElement.style.display = 'block';
+    infoTextElement.innerHTML = '<span>Select a move from above to start!</span>';
 
     let lifeElements = document.getElementsByClassName("icon-heart");
     lifeElements[0].style.display = "inline";
@@ -51,7 +49,6 @@ newgameButton.onclick = () => {
 
 function game(choice) {
 
-    let choices = ["rock", "paper", "scissors", "lizard", "spock"];
     let result, userChoice, computerChoice;
     userChoice = choice.id;
     computerChoice = Math.floor(Math.random() * choices.length);
@@ -178,10 +175,9 @@ function game(choice) {
 
 function styleChoice(choice, color, text) {
     let testchoiceElement = document.getElementById(choice.id);
-    let textElement = document.getElementById('infoText');
 
-    textElement.style.color = color;
-    textElement.innerHTML = text;
+    infoTextElement.style.color = color;
+    infoTextElement.innerHTML = text;
 
     testchoiceElement.style.background = color;
     setTimeout(function () {
@@ -204,11 +200,11 @@ function getScore(result) {
     if (botLives === 3 || userLives === 3) {
         gameCountTotal += 1;
         if (userLives === 3) {
-            text.innerHTML += "<span>Better Luck Next Time! Bot Wins!</span>";
+            infoTextElement.innerHTML += "<span>Better Luck Next Time! Bot Wins!</span>";
             gameCountLoss += 1;
         }
         else {
-            text.innerHTML += "<span>Some good luck you got there!</span>";
+            infoTextElement.innerHTML += "<span>Some good luck you got there!</span>";
             gameScore += 100;
             gameCountWin += 1;
         }
@@ -224,8 +220,7 @@ function getScore(result) {
         console.log("Game ended");
 
         for (let i = lifeElements.length - 1; i >= 0; i--) {
-            //lifeElements[i].style.color = "rgb(255,0,0)";
-            lifeElements[i].style.color = "yellow";
+            lifeElements[i].style.color = "rgb(255,0,0)";
             botLives = 0;
             userLives = 0;
         }
