@@ -17,6 +17,7 @@ newgameButton.onclick = () => {
   newgameButton.style.display = "none";
   gameElement.style.display = "block";
   descriptionElement.style.display = "none";
+  document.getElementById("gameSection").classList.remove("bgcolor3");
 };
 
 function flipCard() {
