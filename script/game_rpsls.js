@@ -1,11 +1,10 @@
 // DOM VARIABLES
-let text = document.getElementsByTagName("P"),
-    infoTextElement = document.getElementById('infoText'),
+let infoTextElement = document.getElementById('infoText'),
     newgameButton = document.getElementById('newgame-button'),
     descriptionElement = document.getElementById('description'),
-    gameElement = document.getElementById('game');
-
-text = text[0];
+    gameElement = document.getElementById('game'),
+    playerHeaderElement = document.getElementById("playerHeader"),
+    dealerHeaderElement = document.getElementById("dealerHeader");
 
 // GET GAME SCORE
 const gameName = 'rpsls',
@@ -22,28 +21,34 @@ gameScoreElement.innerText = gameScore;
 
 // GAME VARIABLES
 let choices = ["rock", "paper", "scissors", "lizard", "spock"],
+    totalLives = 3,
     userLives = 0,
     botLives = 0,
     endGame = false;
 
 gameElement.style.display = 'none';
 generateChoicesList();
+generateLives('user');
+generateLives('bot');
 
 newgameButton.onclick = () => {
     console.log('New game started');
+    // RESET STYLES FOR ELEMENTS
     newgameButton.style.display = 'none';
     descriptionElement.style.display = 'none';
     document.getElementById('gameSection').classList.remove('bgcolor1');
     gameElement.style.display = 'block';
-    infoTextElement.innerHTML = '<span>Select a move from above to start!</span>';
+    infoTextElement.innerHTML = '';
+    infoTextElement.classList.remove('fade');
+    playerHeaderElement.innerHTML = '';
+    dealerHeaderElement.innerHTML = '';
 
+    // RESET HEART ICONS AFTER GAME FINISH
     let lifeElements = document.getElementsByClassName("icon-heart");
-    lifeElements[0].style.display = "inline";
-    lifeElements[1].style.display = "inline";
-    lifeElements[2].style.display = "inline";
-    lifeElements[3].style.display = "inline";
-    lifeElements[4].style.display = "inline";
-    lifeElements[5].style.display = "inline";
+    for (let i = 0; i < lifeElements.length; i++) {
+        lifeElements[i].style.display = "inline";
+    }
+
     endGame = false;
 };
 
@@ -55,72 +60,8 @@ function game(choice) {
 
     result = getResult(userChoice, computerChoice);
 
-    // switch (computerChoice) {
-    //     case 0:
-    //         // Rock
-    //         if (userChoice === "paper" || userChoice === "spock") {
-    //             result = userWins;
-    //         } else if (userChoice === "rock") {
-    //             result = draw;
-    //         } else {
-    //             result = botWins;
-    //         }
-    //         break;
-    //
-    //     case 1:
-    //         // Paper
-    //         if (userChoice === "scissor" || userChoice === "lizard") {
-    //             result = userWins;
-    //         } else if (userChoice === "paper") {
-    //             result = draw;
-    //         } else {
-    //             result = botWins;
-    //         }
-    //         break;
-    //
-    //     case 2:
-    //         // Scissors
-    //         if (userChoice === "spock" || userChoice === "rock") {
-    //             result = userWins;
-    //         } else if (userChoice === "scissor") {
-    //             result = draw;
-    //         } else {
-    //             result = botWins;
-    //         }
-    //         break;
-    //
-    //     case 3:
-    //         // Lizard
-    //         if (userChoice === "rock" || userChoice === "scissor") {
-    //             result = userWins;
-    //         } else if (userChoice === "lizard") {
-    //             result = draw;
-    //         } else {
-    //             result = botWins;
-    //         }
-    //         break;
-    //
-    //     case 4:
-    //         // Spock
-    //         if (userChoice === "lizard" || userChoice === "paper") {
-    //             result = userWins;
-    //         } else if (userChoice === "spock") {
-    //             result = draw;
-    //         } else {
-    //             result = botWins;
-    //         }
-    //         break;
-    //
-    //     default:
-    //         result = "";
-    // }
-
     if (!endGame) {
-
-        const userWinsText = "Bot: " + choices[computerChoice] + "<span> YOU WIN!!!</span>";
-        const botWinsText = "Bot: " + choices[computerChoice] + "<span> YOU LOSE!!!</span>";
-        const drawText = "Bot: " + choices[computerChoice] + "<span> DRAW</span>";
-
+        let messageObject;
         // switch (result) {
         //     case 'userWins': {
         //         text.style.color = "#309B9C";
@@ -160,13 +101,25 @@ function game(choice) {
         // }
 
         if (result === 'userWins') {
-            styleChoice(choice, "#309B9C", userWinsText);
+            messageObject = {
+                userText: userChoice + "<span> - YOU WIN!!!</span>",
+                botText: choices[computerChoice]
+            };
+            styleChoice(choice, "#309B9C", messageObject);
         }
         else if (result === 'botWins') {
-            styleChoice(choice, "#CF293C", botWinsText);
+            messageObject = {
+                userText: userChoice + "<span> - YOU LOOSE!!!</span>",
+                botText: choices[computerChoice]
+            };
+            styleChoice(choice, "#CF293C", messageObject);
         }
         else {
-            styleChoice(choice, "#6029CF", drawText);
+            messageObject = {
+                userText: userChoice + "<span> - DRAW</span>",
+                botText: choices[computerChoice] + "<span> - DRAW</span>"
+            };
+            styleChoice(choice, "#6029CF", messageObject);
         }
 
         getScore(result);
@@ -174,14 +127,16 @@ function game(choice) {
 }
 
 function styleChoice(choice, color, text) {
-    let testchoiceElement = document.getElementById(choice.id);
 
-    infoTextElement.style.color = color;
-    infoTextElement.innerHTML = text;
+    playerHeaderElement.style.color = color;
+    playerHeaderElement.innerHTML = text.userText.toUpperCase();
+    dealerHeaderElement.style.color = color;
+    dealerHeaderElement.innerHTML = text.botText.toUpperCase();
 
-    testchoiceElement.style.background = color;
+    let selectedChoiceElement = document.getElementById(choice.id);
+    selectedChoiceElement.style.background = color;
     setTimeout(function () {
-        testchoiceElement.style.background = "";
+        selectedChoiceElement.style.background = "";
     }, 1000);
 
 }
@@ -200,11 +155,13 @@ function getScore(result) {
     if (botLives === 3 || userLives === 3) {
         gameCountTotal += 1;
         if (userLives === 3) {
-            infoTextElement.innerHTML += "<span>Better Luck Next Time! Bot Wins!</span>";
+            infoTextElement.innerHTML = "<span>Better Luck Next Time! Bot Wins!</span>";
+            infoTextElement.classList.add('fade');
             gameCountLoss += 1;
         }
         else {
-            infoTextElement.innerHTML += "<span>Some good luck you got there!</span>";
+            infoTextElement.innerHTML = "<span>Some good luck you got there!</span>";
+            infoTextElement.classList.add('fade');
             gameScore += 100;
             gameCountWin += 1;
         }
@@ -295,7 +252,6 @@ function getResult(userChoice, computerChoice) {
 
 function generateChoicesList() {
     let ul = document.getElementById("choices");
-    ul.setAttribute('id', 'choices');
 
     for (let i = 0; i < choices.length; i++) {
         let img = document.createElement('img');
@@ -306,6 +262,24 @@ function generateChoicesList() {
         li.setAttribute('id', choices[i]);
         li.setAttribute('onclick', 'game(this)');
         li.appendChild(img);
+
+        ul.appendChild(li);
+    }
+}
+
+function generateLives(elementName) {
+    let ul = document.getElementById(elementName);
+
+    for (let i = 0; i < totalLives; i++) {
+
+        let iElement = document.createElement('i');
+        iElement.setAttribute('class', 'fas fa-heart icon-heart');
+
+        let spanElement = document.createElement('span');
+        spanElement.appendChild(iElement);
+
+        let li = document.createElement('li');
+        li.appendChild(spanElement);
 
         ul.appendChild(li);
     }

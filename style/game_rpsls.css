@@ -6,7 +6,7 @@ h1 {
 }
 
 /*.container-lg  {*/
-    /*background-color: #fff;*/
+/*background-color: #fff;*/
 /*}*/
 
 .theicons {
@@ -84,7 +84,7 @@ img {
 }
 
 #info {
-    margin-top: 32px;
+    margin-top: 20px;
 }
 
 p {
@@ -104,32 +104,36 @@ ul {
     color: #ffffff;
 }
 
-#scores li {
-    display: inline-block;
-}
+/*#scores li {*/
+/*display: inline-block;*/
+/*}*/
 
-#scores li ul {
-    margin-top: 10px;
-    margin-left: -40px;
-}
+/*#scores li ul {*/
+/*margin-top: 10px;*/
+/*margin-left: -40px;*/
+/*}*/
 
-#scores li ul li {
+/*#scores li ul li {*/
+/*display: inline-block;*/
+/*margin: 0 5px;*/
+/*}*/
+
+#user li, #bot li {
     display: inline-block;
     margin: 0 5px;
 }
 
-#scores li ul li span {
+#user li span, #bot li span {
     color: rgb(255, 0, 0);
 }
 
-#user,
-#bot {
-    padding: 40px;
+#user, #bot {
+    padding: 0 10px;
 }
 
-#scores > li:first-child {
-    border-right: 1px solid #505050;
-}
+/*#scores > li:first-child {*/
+/*border-right: 1px solid #505050;*/
+/*}*/
 
 @media screen and (max-width: 800px) {
     #scores li {
@@ -166,4 +170,14 @@ ul {
 [class*=" icon-"] {
     color: red;
     opacity: 0.8;
+}
+
+#infoText {
+    opacity: 0;
+
+}
+
+#infoText.fade {
+    opacity: 1;
+    transition: opacity 1s;
 }

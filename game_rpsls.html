@@ -63,9 +63,7 @@
                     <li ><i class="fas fa-caret-right" ></i > Rock crushes Lizard</li >
                     <li ><i class="fas fa-caret-right" ></i > Lizard poisons Spock</li >
                     <li ><i class="fas fa-caret-right" ></i > Spock smashes Scissors</li >
-                    <li >
-                        <i class="fas fa-caret-right" ></i > Scissors decapitates Lizard
-                    </li >
+                    <li ><i class="fas fa-caret-right" ></i > Scissors decapitates Lizard</li >
                     <li ><i class="fas fa-caret-right" ></i > Lizard eats Paper</li >
                     <li ><i class="fas fa-caret-right" ></i > Paper disproves Spock</li >
                     <li ><i class="fas fa-caret-right" ></i > Spock vaporizes Rock</li >
@@ -75,168 +73,33 @@
         </div >
 
         <div id="game" >
+
             <div class="row theicons" >
                 <div class="col-12" >
-                    <ul id="choices" >
-                        <!--<li id="rock" onclick="game(this)" >-->
-                        <!--<img src="assets/game_rpsls/big-lrock.svg" alt="rock" />-->
-                        <!--</li >-->
-                        <!--<li id="paper" onclick="game(this)" >-->
-                        <!--<img src="assets/game_rpsls/big-lpaper.svg" alt="paper" />-->
-                        <!--</li >-->
-                        <!--<li id="scissor" onclick="game(this)" >-->
-                        <!--<img src="assets/game_rpsls/big-lscissor.svg" alt="scissor" />-->
-                        <!--</li >-->
-                        <!--<li id="lizard" onclick="game(this)" >-->
-                        <!--<img src="assets/game_rpsls/big-lizard.svg" alt="lizard" />-->
-                        <!--</li >-->
-                        <!--<li id="spock" onclick="game(this)" >-->
-                        <!--<img src="assets/game_rpsls/big-lspock.svg" alt="spock" />-->
-                        <!--</li >-->
-                    </ul >
+                    <ul id="choices" ></ul >
                 </div >
             </div >
 
             <div id="info" >
-                <!--<p >Select a move from above to start!<br /><span ></span ></p >-->
-                <p id="infoText" ></p >
+                <p id="infoText" class="text-muted" ></p >
             </div >
 
-            <div class="row p-4" >
+            <div class="row" >
 
                 <div class="col-md-6" >
                     <img src="assets/game_rpsls/smile-solid.svg" alt="lives" class="icon-user" width="25%" />
-                    <h1 id="playerHeader" ></h1 >
+                    <div id="playerHeader" class="pb-2" ></div >
+                    <ul id="user" ></ul >
                 </div >
 
                 <div class="col-md-6" >
                     <img src="assets/game_rpsls/robot-solid.svg" alt="lives" class="icon-android" width="25%" />
-                    <h1 id="dealerHeader" ></h1 >
+                    <div id="dealerHeader" class="pb-2" ></div >
+                    <ul id="bot" ></ul >
                 </div >
 
             </div >
 
-
-            <ul id="scores" >
-                <li id="user" >
-              <span
-              ><img
-                      src="assets/game_rpsls/smile-solid.svg"
-                      alt="lives"
-                      class="icon-user"
-              /></span >
-                    <ul >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                    </ul >
-                </li >
-
-                <li id="bot" >
-              <span
-              ><img
-                      src="assets/game_rpsls/robot-solid.svg"
-                      alt="lives"
-                      class="icon-android"
-              /></span >
-                    <ul  >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                        <li >
-                            <span ><i class="fas fa-heart icon-heart" ></i > </span >
-                        </li >
-                    </ul >
-                </li >
-            </ul >
-
-            <!--Backup-->
-            <!--<ul id="scores" >-->
-            <!--<li id="user" >-->
-            <!--<span-->
-            <!--&gt;<img-->
-            <!--src="assets/game_rpsls/smile-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-user"-->
-            <!--/></span >-->
-            <!--<ul id="lives" >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--</ul >-->
-            <!--</li >-->
-
-            <!--<li id="bot" >-->
-            <!--<span-->
-            <!--&gt;<img-->
-            <!--src="assets/game_rpsls/robot-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-android"-->
-            <!--/></span >-->
-            <!--<ul id="lives" >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--<li >-->
-            <!--<span >-->
-            <!--<img-->
-            <!--src="assets/game_rpsls/heart-solid.svg"-->
-            <!--alt="lives"-->
-            <!--class="icon-heart"-->
-            <!--/>-->
-            <!--</span >-->
-            <!--</li >-->
-            <!--</ul >-->
-            <!--</li >-->
-            <!--</ul >-->
         </div >
 
         <div class="row p-4" >
