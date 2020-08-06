@@ -1,6 +1,6 @@
 class Player {
 
-    _installedGames = ['rpsls', 'twentyone'];
+    _installedGames = ['rpsls', 'twentyone', 'memory', 'block'];
 
     constructor(playerName) {
         this.playerName = playerName;
@@ -30,10 +30,10 @@ class Player {
 
         let lsPlayerID = 'cr_player_id';
         let lsPlayerName = 'cr_player_name';
-        if (!localStorage.hasOwnProperty(lsPlayerName)) {
+        if (!localStorage.hasOwnProperty(lsPlayerID)) {
             console.log('Creating localStorage set for user.');
-            localStorage.setItem(lsPlayerName, x.playerName);
             localStorage.setItem(lsPlayerID, x._safePlayerName);
+            localStorage.setItem(lsPlayerName, x.playerName);
             x.playerGames.forEach((elementGame) => {
                 localStorage.setItem(elementGame.score, '0');
                 localStorage.setItem(elementGame.count_total, '0');
@@ -46,8 +46,12 @@ class Player {
         }
     }
 
+    static getPlayerId() {
+        return localStorage.getItem('cr_player_id');
+    }
+
     static getPlayerName() {
-        return  localStorage.getItem('cr_player_id');
+        return  localStorage.getItem('cr_player_name');
     }
 
     static getPlayerGameScoreItem(gameName, gameKey) {
