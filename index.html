@@ -158,7 +158,18 @@
     ></script>
 
     <script>
-      let playerCR = new Player("Player 1");
+      function greetPlayer() {
+        let playerName = prompt("Welcome to Casino Royale! What's your name?");
+        alert("Good luck " + playerName + "!");
+
+        return playerName;
+      }
+
+      let playerName = greetPlayer();
+
+      console.log(playerName);
+
+      let playerCR = new Player(playerName);
       Player.generatePlayerScore(playerCR);
 
       let totalscoreElement = document.getElementById("totalScore");
