@@ -3,7 +3,7 @@ const cards = document.querySelectorAll(".memory-card");
 let descriptionElement = document.getElementById("description");
 let newgameButton = document.getElementById("newgame-button");
 let gameElement = document.getElementById("game");
-let timeElement = document.getElementById("game-time");
+// let timeElement = document.getElementById("game-time");
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -28,6 +28,8 @@ let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, "score")),
 
 gameScoreElement.innerText = gameScore;
 
+// TIMER
+
 // Start game
 
 gameElement.style.display = "none";
@@ -44,10 +46,18 @@ newgameButton.onclick = () => {
     card.addEventListener("click", flipCard);
   });
   shuffle();
-  // Final Countdown
-  // Countdown in DIV
-  // endgame => true
-  // card.remove eventListenere in card.forEach
+
+  // Timer
+  let timeleft = 100;
+  let downloadTimer = setInterval(function () {
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+      document.getElementById("game-time").innerHTML = "Finished";
+    } else {
+      document.getElementById("game-time").innerHTML = timeleft;
+    }
+    timeleft -= 1;
+  }, 1000);
 };
 
 function flipCard() {
