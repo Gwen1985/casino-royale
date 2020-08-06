@@ -147,3 +147,9 @@ p {
 .front-face {
   transform: rotateY(180deg);
 }
+
+#game-time {
+  color: #2f2a5f;
+  font-weight: 800;
+  font-size: 24pt;
+}
