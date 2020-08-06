@@ -5,6 +5,12 @@ h1 {
     margin-top: 10px;
 }
 
+#game {
+    /*border: 1px solid red;*/
+    height: 500px;
+    width: 1111px;
+}
+
 .block {
     top: 0;
     left: 0;
@@ -12,19 +18,35 @@ h1 {
     width: 25px;
     border-radius: 7px;
     background-color: crimson;
-}
-
-#game {
-    border: 1px solid red;
-    height: 500px;
-    width: 500px;
+    position: absolute;
 }
 
 .block_1 {
     width: 50px;
     height:50px;
-    background-color:red;
-    position:fixed;
+    background-color: #002aff;
+    position:relative;
+}
+
+.block_2 {
+    width: 50px;
+    height:50px;
+    background-color: #c800ff;
+    position:relative;
+}
+
+.block_3 {
+    width: 50px;
+    height:50px;
+    background-color: #6bde1d;
+    position:relative;
+}
+
+.block_4 {
+    width: 50px;
+    height:50px;
+    background-color: #ecd10a;
+    position:relative;
 }
 
 /*.block1 {*/

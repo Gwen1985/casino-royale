@@ -1,19 +1,19 @@
-  // window.addEventListener("keydown", checkKeyPress,true);
-  //
-  // function checkKeyPress() {
-  //     if (event.keyCode == 37) {
-  //         console.log('You pressed arrowLeft');
-  //     }
-  //     if (event.keyCode == 38) {
-  //         console.log('You pressed arrowUp');
-  //     }
-  //     if (event.keyCode == 39) {
-  //         console.log('You pressed arrowRight');
-  //     }
-  //     if (event.keyCode == 40) {
-  //         console.log('You pressed ArrowDown');
-  //     }
-  // }
+// window.addEventListener("keydown", checkKeyPress,true);
+//
+// function checkKeyPress() {
+//     if (event.keyCode == 37) {
+//         console.log('You pressed arrowLeft');
+//     }
+//     if (event.keyCode == 38) {
+//         console.log('You pressed arrowUp');
+//     }
+//     if (event.keyCode == 39) {
+//         console.log('You pressed arrowRight');
+//     }
+//     if (event.keyCode == 40) {
+//         console.log('You pressed ArrowDown');
+//     }
+// }
 
 let box = document.querySelector('.block');
 let moveBy = 10;
@@ -42,56 +42,59 @@ window.addEventListener('keydown', (e) => {
 });
 
 
-  $(document).ready(function() {
-      animateDiv();
+$(document).ready(function () {
+    animateDiv('.block_1');
+    animateDiv('.block_2');
+    animateDiv('.block_3');
+    animateDiv('.block_4');
 
-  });
+});
 
-  function makeNewPosition($container) {
+function makeNewPosition($game) {
 
-      // Get viewport dimensions (remove the dimension of the div)
-      $container = ($container || $(window))
-      var h = $container.height() - 30;
-      var w = $container.width()   - 30;
+    // Get viewport dimensions (remove the dimension of the div)
+    $game = ($game || $(window))
+    let h = $game.height() - 200;
+    let w = $game.width() - 200;
 
-      var nh = Math.floor(Math.random() * h);
-      var nw = Math.floor(Math.random() * w);
+    let nh = Math.floor(Math.random() * h);
+    let nw = Math.floor(Math.random() * w);
 
-      return [nh, nw];
+    return [nh, nw];
 
-  }
+}
 
-  function animateDiv() {
-      var $target = $('.block_1');
-      var newq = makeNewPosition($target.parent());
-      var oldq = $target.offset();
-      var speed = calcSpeed([oldq.top, oldq.left], newq);
+function animateDiv(blockElemenet) {
+    let $target = $(blockElemenet);
+    let newq = makeNewPosition($target.parent());
+    let oldq = $target.offset();
+    let speed = 1100;//calcSpeed([oldq.top, oldq.left], newq);
 
-      $('.block_1').animate({
-          top: newq[0],
-          left: newq[1]
-      }, speed, function() {
-          animateDiv();
-      });
+    $(blockElemenet).animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function () {
+        animateDiv(blockElemenet);
+    });
+};
 
-  };
+function calcSpeed(prev, next) {
 
-  function calcSpeed(prev, next) {
+    let x = Math.abs(prev[1] - next[1]);
+    let y = Math.abs(prev[0] - next[0]);
 
-      var x = Math.abs(prev[1] - next[1]);
-      var y = Math.abs(prev[0] - next[0]);
+    let greatest = x > y ? x : y;
 
-      var greatest = x > y ? x : y;
+    let speedModifier = 0.2;
 
-      var speedModifier = 0.1;
+    let speed = Math.ceil(greatest / speedModifier);
 
-      var speed = Math.ceil(greatest / speedModifier);
+    return speed;
 
-      return speed;
+}
 
-  }
- // let x = event.pageX;     // Get the horizontal coordinate
- // let y = event.pageY;     // Get the vertical coordinate
- // let coor = "X coords: " + x + ", Y coords: " + y;
- //
- // console.log(coor);
+// let x = event.pageX;     // Get the horizontal coordinate
+// let y = event.pageY;     // Get the vertical coordinate
+// let coor = "X coords: " + x + ", Y coords: " + y;
+//
+// console.log(coor);
