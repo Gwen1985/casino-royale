@@ -194,36 +194,51 @@
       // console.log(playerName);
 
       let playerWelcomeElement = document.getElementById("playerWelcome");
-      let totalscoreElement = document.getElementById("totalScore");
+      let scoreElement = document.getElementById("score");
+      let totalScoreElement = document.getElementById("totalScore");
       let formInputElement = document.getElementById("formInputName");
+      let gameButtons = document.querySelectorAll("a");
+
       if (localStorage.hasOwnProperty("cr_player_id")) {
         // USER EXISTS
         //show playerWelcome
         playerWelcomeElement.innerText = "Welcome " + Player.getPlayerName();
         //show total score
-        totalscoreElement.style.display = "inline";
+        totalScoreElement.style.display = "block";
+        totalScoreElement.innertext = Player.getPlayerTotalScore().toString();
+        //totalscoreElement.style.display = "block";
         //hide formInputName
         formInputElement.style.display = "none";
       } else {
         // USER NEEDS TO BE CREATED
         //hide total score
-        totalscoreElement.style.display = "none";
+        scoreElement.style.display = "none";
         //show form input
-        formInputElement.style.display = "inline";
+        formInputElement.style.display = "block";
+        formInputElement.removeAttribute("style");
+        gameButtons.forEach((gameButton) => {
+          gameButton.style.display = "none";
+        });
         // ADD EVENTLISTENER TO BUTTON
 
         document
           .getElementById("createPlayer")
           .addEventListener("click", function () {
             // GET VALUE OF INPUTFIELD
-            let playerName = playerWelcomeElement;
+            let playerName = document.getElementById("playerName").value;
+            if (playerName === "") {
+              alert("please fill in your name");
+              return;
+            }
             let playerCR = new Player(playerName);
             Player.generatePlayerScore(playerCR);
             playerWelcomeElement.innerText =
               "Welcome " + Player.getPlayerName();
-            totalscoreElement.innerText = playerCR
-              .getPlayerTotalScore()
-              .toString();
+            totalScoreElement.innerText = Player.getPlayerTotalScore().toString();
+            formInputElement.style.display = "none";
+            gameButtons.forEach((gameButton) => {
+              gameButton.style.display = "inline";
+            });
           });
       }
     </script>
