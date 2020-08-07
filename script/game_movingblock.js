@@ -105,8 +105,8 @@ function makeNewPosition($game) {
 
     // Get viewport dimensions (remove the dimension of the div)
     $game = ($game || $(window));
-    let h = $game.height() - 205;
-    let w = $game.width() - 205;
+    let h = $game.height() - 200;
+    let w = $game.width() - 200;
 
     let nh = Math.floor(Math.random() * h);
     let nw = Math.floor(Math.random() * w);
