@@ -13,8 +13,8 @@ h1 {
 }
 
 .block {
-    top: 0;
-    left: 0;
+    top: 250px;
+    left: 750px;
     height: 25px;
     width: 25px;
     border-radius: 7px;

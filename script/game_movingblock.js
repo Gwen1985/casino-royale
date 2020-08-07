@@ -51,37 +51,37 @@
 // console.log(b);
 // console.log(coor);
 
-var pane = $('#game'),
+let pane = $('#game'),
     box = $('#block'),
     w = pane.width() - box.width(),
     d = {},
-    x = 4;
+    x = 3;
 
 function newv(v,a,b) {
-    var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+    let n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
     return n < 0 ? 0 : n > w ? w : n;
 }
 
-window.addEventListener('keydown', (e) => {
-    switch (e.key) {
-        case 'ArrowLeft' :
-            box.style.left = parseInt(box.style.left) - moveBy + 'px';
-            console.log(getCoordinates("#block"));
-            break;
-        case 'ArrowRight' :
-            box.style.left = parseInt(box.style.left) + moveBy + 'px';
-            console.log(getCoordinates("#block"));
-            break;
-        case 'ArrowUp' :
-            box.style.top = parseInt(box.style.top) - moveBy + 'px';
-            console.log(getCoordinates("#block"));
-            break;
-        case 'ArrowDown' :
-            box.style.top = parseInt(box.style.top) + moveBy + 'px';
-            console.log(getCoordinates("#block"));
-            break;
-    }
-});
+// window.addEventListener('keydown', (e) => {
+//     switch (e.key) {
+//         case 'ArrowLeft' :
+//             box.style.left = parseInt(box.style.left) - moveBy + 'px';
+//             console.log(getCoordinates("#block"));
+//             break;
+//         case 'ArrowRight' :
+//             box.style.left = parseInt(box.style.left) + moveBy + 'px';
+//             console.log(getCoordinates("#block"));
+//             break;
+//         case 'ArrowUp' :
+//             box.style.top = parseInt(box.style.top) - moveBy + 'px';
+//             console.log(getCoordinates("#block"));
+//             break;
+//         case 'ArrowDown' :
+//             box.style.top = parseInt(box.style.top) + moveBy + 'px';
+//             console.log(getCoordinates("#block"));
+//             break;
+//     }
+// });
 
 $(window).keydown(function(e) { d[e.which] = true; });
 $(window).keyup(function(e) { d[e.which] = false; });
@@ -91,7 +91,7 @@ setInterval(function() {
         left: function(i,v) { return newv(v, 37, 39); },
         top: function(i,v) { return newv(v, 38, 40); }
     });
-}, 20);
+}, 10);
 
 $(document).ready(function () {
     animateDiv('.block_1');
@@ -105,8 +105,8 @@ function makeNewPosition($game) {
 
     // Get viewport dimensions (remove the dimension of the div)
     $game = ($game || $(window));
-    let h = $game.height() - 205;
-    let w = $game.width() - 205;
+    let h = $game.height() - 200;
+    let w = $game.width() - 200;
 
     let nh = Math.floor(Math.random() * h);
     let nw = Math.floor(Math.random() * w);
