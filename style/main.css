@@ -35,6 +35,19 @@ p {
   font-size: 16pt;
 }
 
+#block_1 {
+  margin-top: 34px;
+}
+#block_2 {
+  margin-top: 36px;
+}
+#block_3 {
+  margin-top: 50px;
+}
+#block_4 {
+  margin-top: 40px;
+}
+
 #score {
   color: white;
   border: 1px white;
@@ -90,4 +103,45 @@ p {
 
 .yellow {
   color: #f7ba46;
+}
+
+@media screen and (max-width: 992px) {
+  #block_1 {
+    height: 40%;
+    margin-top: 40px;
+  }
+  #block_2 {
+    height: 52%;
+    margin-top: 40px;
+  }
+  #block_3 {
+    height: 30%;
+    margin-top: 60px;
+  }
+  #block_4 {
+    height: 40%;
+    margin-top: 46px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  h1 {
+    color: green;
+  }
+  #block_1 {
+    height: 60%;
+    margin-top: 20px;
+  }
+  #block_2 {
+    height: 52%;
+    margin-top: 50px;
+  }
+  #block_3 {
+    height: 50%;
+    margin-top: 60px;
+  }
+  #block_4 {
+    height: 56%;
+    margin-top: 34px;
+  }
 }
