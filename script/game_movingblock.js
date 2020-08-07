@@ -15,32 +15,62 @@
 //     }
 // }
 
-let box = document.querySelector('.block');
-let moveBy = 10;
+// let box = document.getElementById('block');
+// let moveBy = 10;
+//
+// window.addEventListener('load', () => {
+//     box.style.position = 'relative';
+//     box.style.left = 0;
+//     box.style.top = 0;
+// });
+//
+//
+// window.addEventListener('keydown', (e) => {
+//     switch (e.key) {
+//         case 'ArrowLeft' :
+//             box.style.left = parseInt(box.style.left) - moveBy + 'px';
+//             break;
+//         case 'ArrowRight' :
+//             box.style.left = parseInt(box.style.left) + moveBy + 'px';
+//             break;
+//         case 'ArrowUp' :
+//             box.style.top = parseInt(box.style.top) - moveBy + 'px';
+//             break;
+//         case 'ArrowDown' :
+//             box.style.top = parseInt(box.style.top) + moveBy + 'px';
+//             break;
+//
+//
+//     }
+// });
+// let a = box.touchPageX;     // Get the horizontal coordinate
+// let b = box.pageY;     // Get the vertical coordinate
+// let coor = "A coords: " + a + ", B coords: " + b;
 
-window.addEventListener('load', () => {
-    box.style.position = 'relative';
-    box.style.left = 0;
-    box.style.top = 0;
-});
+// console.log(a);
+// console.log(b);
+// console.log(coor);
 
-window.addEventListener('keydown', (e) => {
-    switch (e.key) {
-        case 'ArrowLeft' :
-            box.style.left = parseInt(box.style.left) - moveBy + 'px';
-            break;
-        case 'ArrowRight' :
-            box.style.left = parseInt(box.style.left) + moveBy + 'px';
-            break;
-        case 'ArrowUp' :
-            box.style.top = parseInt(box.style.top) - moveBy + 'px';
-            break;
-        case 'ArrowDown' :
-            box.style.top = parseInt(box.style.top) + moveBy + 'px';
-            break;
-    }
-});
+var pane = $('#game'),
+    box = $('#block'),
+    w = pane.width() - box.width(),
+    d = {},
+    x = 4;
 
+function newv(v,a,b) {
+    var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+    return n < 0 ? 0 : n > w ? w : n;
+}
+
+$(window).keydown(function(e) { d[e.which] = true; });
+$(window).keyup(function(e) { d[e.which] = false; });
+
+setInterval(function() {
+    box.css({
+        left: function(i,v) { return newv(v, 37, 39); },
+        top: function(i,v) { return newv(v, 38, 40); }
+    });
+}, 20);
 
 $(document).ready(function () {
     animateDiv('.block_1');
@@ -54,8 +84,8 @@ function makeNewPosition($game) {
 
     // Get viewport dimensions (remove the dimension of the div)
     $game = ($game || $(window))
-    let h = $game.height() - 200;
-    let w = $game.width() - 200;
+    let h = $game.height() - 205;
+    let w = $game.width() - 205;
 
     let nh = Math.floor(Math.random() * h);
     let nw = Math.floor(Math.random() * w);
@@ -91,10 +121,5 @@ function calcSpeed(prev, next) {
 
     return speed;
 
-}
+};
 
-// let x = event.pageX;     // Get the horizontal coordinate
-// let y = event.pageY;     // Get the vertical coordinate
-// let coor = "X coords: " + x + ", Y coords: " + y;
-//
-// console.log(coor);
