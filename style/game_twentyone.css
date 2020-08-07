@@ -8,6 +8,10 @@ p {
   color: #ffffff;
   font-size: 14pt;
 }
+#description {
+  max-width: 1024px;
+  margin: auto;
+}
 
 p span {
   font-size: 1.8em;

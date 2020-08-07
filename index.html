@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" >
+<head >
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
     <!-- Bootstrap CSS -->
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
     />
     <!-- style -->
     <link rel="stylesheet" href="style/main.css" />
     <link rel="stylesheet" href="style/normalize.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
     />
     <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
 
-    <title>Casino Royale</title>
-  </head>
+    <title >Casino Royale</title >
+</head >
 
-  <body>
-    <header>
-      <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
-      <h1>Casino Royale</h1>
-      <p id="playerWelcome" class="text-white"></p>
-    </header>
+<body >
+<header >
+    <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
+    <h1 >Casino Royale</h1 >
+    <p id="playerWelcome" class="text-white" ></p >
+</header >
 
-    <div id="score">
-      <i class="fas fa-star"></i>&nbsp;&nbsp;Total Score:
-      <span id="totalScore"></span>
-    </div>
+<div id="score" >
+    <i class="fas fa-star" ></i >&nbsp;&nbsp;Total Score:
+    <span id="totalScore" ></span >
+</div >
 
-    <div class="container">
-      <div id="formInputName" class="row">
-        <div class="col-md-10">
-          <!--<label for="basic-url" >What is your name?</label >-->
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
+<div class="container" >
+    <div id="formInputName" class="row" >
+        <div class="col-md-10" >
+            <!--<label for="basic-url" >What is your name?</label >-->
+            <div class="input-group mb-3" >
+                <div class="input-group-prepend" >
               <span class="input-group-text" id="basic-addon1"
+<<<<<<< HEAD
                 >What's your name?</span
               >
             </div>
@@ -64,183 +65,194 @@
       </div>
 
       <div class="card-columns d-flex justify-content-center mb-2">
+=======
+              >Welcome! What's your name?</span
+              >
+                </div >
+                <input
+                        type="text"
+                        class="form-control"
+                        id="playerName"
+                        aria-describedby="basic-addon1"
+                />
+            </div >
+        </div >
+        <div class="col-md-2 text-right" >
+            <button id="createPlayer" class="btn btn-primary" >Ok</button >
+        </div >
+    </div >
+
+    <div class="card-columns d-flex justify-content-center mb-2" >
+>>>>>>> e0806a34f728762101d3582c45440046462e6683
         <!-- Start Block 1 -->
-        <div class="card bgcolor1">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card-body text-left">
-                <h4 class="card-title">Rock, Paper, Scissors, Lizard, Spock</h4>
-                <a href="game_rpsls.html" class="btn btn-primary">Play now!</a>
-              </div>
-            </div>
-            <div class="col-md-3 p-2 align-items-center">
-              <img
-                src="assets/game-1-normal.svg"
-                id="block_1"
-                alt="RPSLS icon"
-                height="80px"
-              />
-            </div>
-          </div>
-        </div>
+        <div class="card bgcolor1" >
+            <div class="row" >
+                <div class="col-md-8" >
+                    <div class="card-body text-left" >
+                        <h4 class="card-title" >Rock, Paper, Scissors, Lizard, Spock</h4 >
+                        <a href="game_rpsls.html" class="btn btn-primary" >Play now!</a >
+                    </div >
+                </div >
+                <div class="col-md-3 p-2 align-items-center" >
+                    <img
+                            src="assets/game-1-normal.svg"
+                            id="block_1"
+                            alt="RPSLS icon"
+                            height="80px"
+                    />
+                </div >
+            </div >
+        </div >
 
         <!-- Start Block 2 -->
-        <div class="card bgcolor2">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card-body text-left">
-                <h4 class="card-title">Twenty-one</h4>
-                <br />
-                <a href="game_twentyone.html" class="btn btn-primary"
-                  >Play now!</a
-                >
-              </div>
-            </div>
-            <div class="col-md-3 p-2 align-items-center">
-              <img
-                src="assets/game-2-normal.svg"
-                id="block_2"
-                alt="RPSLS icon"
-                height="80px"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="card bgcolor2" >
+            <div class="row" >
+                <div class="col-md-8" >
+                    <div class="card-body text-left" >
+                        <h4 class="card-title" >Twenty-one</h4 >
+                        <br />
+                        <a href="game_twentyone.html" class="btn btn-primary"
+                        >Play now!</a
+                        >
+                    </div >
+                </div >
+                <div class="col-md-3 p-2 align-items-center" >
+                    <img
+                            src="assets/game-2-normal.svg"
+                            id="block_2"
+                            alt="RPSLS icon"
+                            height="80px"
+                    />
+                </div >
+            </div >
+        </div >
+    </div >
+</div >
 
-    <div class="container">
-      <div class="card-columns d-flex justify-content-center">
+<div class="container" >
+    <div class="card-columns d-flex justify-content-center" >
         <!-- Start Block 3 -->
-        <div class="card bgcolor3">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card-body text-left">
-                <h4 class="card-title">Memory game</h4>
-                <br />
-                <a href="game_memory.html" class="btn btn-primary">Play now!</a>
-              </div>
-            </div>
-            <div class="col-md-3 p-2 align-items-center">
-              <img
-                src="assets/game-3-normal.svg"
-                id="block_3"
-                alt="RPSLS icon"
-                width="100px"
-              />
-            </div>
-          </div>
-        </div>
+        <div class="card bgcolor3" >
+            <div class="row" >
+                <div class="col-md-8" >
+                    <div class="card-body text-left" >
+                        <h4 class="card-title" >Memory game</h4 >
+                        <br />
+                        <a href="game_memory.html" class="btn btn-primary" >Play now!</a >
+                    </div >
+                </div >
+                <div class="col-md-3 p-2 align-items-center" >
+                    <img
+                            src="assets/game-3-normal.svg"
+                            id="block_3"
+                            alt="RPSLS icon"
+                            width="100px"
+                    />
+                </div >
+            </div >
+        </div >
 
         <!-- Start Block 4 -->
-        <div class="card bgcolor4">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card-body text-left">
-                <h4 class="card-title">Block moving game</h4>
-                <br />
-                <a href="game_movingblock.html" class="btn btn-primary"
-                  >Play now!</a
-                >
-              </div>
-            </div>
-            <div class="col-md-3 p-2 align-items-center">
-              <img
-                src="assets/game-4-normal.svg"
-                id="block_4"
-                alt="RPSLS icon"
-                width="100px"
-              />
-            </div>
-          </div>
-        </div>
+        <div class="card bgcolor4" >
+            <div class="row" >
+                <div class="col-md-8" >
+                    <div class="card-body text-left" >
+                        <h4 class="card-title" >Block moving game</h4 >
+                        <br />
+                        <a href="game_movingblock.html" class="btn btn-primary"
+                        >Play now!</a
+                        >
+                    </div >
+                </div >
+                <div class="col-md-3 p-2 align-items-center" >
+                    <img
+                            src="assets/game-4-normal.svg"
+                            id="block_4"
+                            alt="RPSLS icon"
+                            width="100px"
+                    />
+                </div >
+            </div >
+        </div >
 
         <!-- End Blocks -->
-      </div>
+    </div >
 
-      <!-- Footer -->
-      <footer><p class="footer">© BeCode JackpotScripters</p></footer>
-    </div>
-    <!-- Optional JavaScript -->
+    <!-- Footer -->
+    <footer ><p class="footer" >© BeCode JackpotScripters</p ></footer >
+</div >
+<!-- Optional JavaScript -->
 
-    <script src="script/lib_player.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
+<script src="script/lib_player.js" ></script >
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script >
+<script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+></script >
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"
+></script >
 
-    <script>
-      // function greetPlayer() {
-      //     let playerName = prompt("Welcome to Casino Royale! What's your name?");
-      //     alert("Good luck " + playerName + "!");
-      //
-      //     return playerName;
-      // }
-      //
-      // let playerName = greetPlayer();
-      //
-      // console.log(playerName);
+<script >
 
-      let playerWelcomeElement = document.getElementById("playerWelcome");
-      let scoreElement = document.getElementById("score");
-      let totalScoreElement = document.getElementById("totalScore");
-      let formInputElement = document.getElementById("formInputName");
-      let gameButtons = document.querySelectorAll("a");
+    let playerWelcomeElement = document.getElementById("playerWelcome");
+    let scoreElement = document.getElementById("score");
+    let totalScoreElement = document.getElementById("totalScore");
+    let formInputElement = document.getElementById("formInputName");
+    let playerNameElement = document.getElementById("playerName");
+    let gameButtons = document.querySelectorAll("a");
 
-      if (localStorage.hasOwnProperty("cr_player_id")) {
+    if (localStorage.hasOwnProperty("cr_player_id")) {
         // USER EXISTS
-        //show playerWelcome
-        playerWelcomeElement.innerText = "Welcome " + Player.getPlayerName();
-        //show total score
-        totalScoreElement.style.display = "block";
-        totalScoreElement.innertext = Player.getPlayerTotalScore().toString();
-        //totalscoreElement.style.display = "block";
-        //hide formInputName
+        totalScoreElement.style.display = "inline-block";
         formInputElement.style.display = "none";
-      } else {
+
+        playerWelcomeElement.innerText = "Welcome " + Player.getPlayerName();
+        totalScoreElement.innerText = Player.getPlayerTotalScore().toString();
+
+    } else {
         // USER NEEDS TO BE CREATED
-        //hide total score
+        playerWelcomeElement.style.display = "none";
         scoreElement.style.display = "none";
-        //show form input
         formInputElement.style.display = "block";
         formInputElement.removeAttribute("style");
-        gameButtons.forEach((gameButton) => {
-          gameButton.style.display = "none";
-        });
-        // ADD EVENTLISTENER TO BUTTON
 
-        document
-          .getElementById("createPlayer")
-          .addEventListener("click", function () {
+        gameButtons.forEach((gameButton) => {
+            gameButton.style.display = "none";
+        });
+
+        document.getElementById("createPlayer").addEventListener("click", function () {
             // GET VALUE OF INPUTFIELD
-            let playerName = document.getElementById("playerName").value;
+            let playerName = playerNameElement.value;
+
             if (playerName === "") {
-              alert("please fill in your name");
-              return;
+                alert("Please fill in your name");
+                return;
             }
             let playerCR = new Player(playerName);
             Player.generatePlayerScore(playerCR);
-            playerWelcomeElement.innerText =
-              "Welcome " + Player.getPlayerName();
+
+            playerWelcomeElement.innerText = "Welcome " + Player.getPlayerName();
             totalScoreElement.innerText = Player.getPlayerTotalScore().toString();
+
+            playerWelcomeElement.style.display = "block";
+            scoreElement.style.display = "inline-block";
             formInputElement.style.display = "none";
+
             gameButtons.forEach((gameButton) => {
-              gameButton.style.display = "inline";
+                gameButton.style.display = "inline";
             });
-          });
-      }
-    </script>
-  </body>
-</html>
+        });
+    }
+
+</script >
+</body >
+</html >
