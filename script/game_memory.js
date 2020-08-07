@@ -28,8 +28,6 @@ let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, "score")),
 
 gameScoreElement.innerText = gameScore;
 
-// TIMER
-
 // Start game
 
 gameElement.style.display = "none";
@@ -60,6 +58,8 @@ newgameButton.onclick = () => {
   }, 1000);
 };
 
+// FlipCard
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -82,8 +82,8 @@ function flipCard() {
   // ALL CARDS ARE FLIPPED, GAME ENDED
   if (test === 6) {
     endGame = true;
-    // DO STUFF
 
+    // DO STUFF
     newgameButton.style.display = "inline";
   }
 }
