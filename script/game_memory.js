@@ -12,6 +12,8 @@ let endGame = false,
   test = 0;
 let time = 100;
 
+let downloadTimer;
+
 // GET GAME SCORE
 const gameName = "memory",
   playerName = Player.getPlayerName();
@@ -34,6 +36,9 @@ gameElement.style.display = "none";
 
 newgameButton.onclick = () => {
   console.log("New game started");
+  gameCountTotal += 1;
+  Player.setPlayerGameScoreItem(gameName, "count_total", gameCountTotal);
+
   test = 0;
   newgameButton.style.display = "none";
   gameElement.style.display = "block";
@@ -46,11 +51,17 @@ newgameButton.onclick = () => {
   shuffle();
 
   // Timer
-  let timeleft = 100;
-  let downloadTimer = setInterval(function () {
+  let timeleft = 10;
+  downloadTimer = setInterval(function () {
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
       document.getElementById("game-time").innerHTML = "Finished";
+      cards.forEach((card) => {
+        card.removeEventListener("click", flipCard);
+      });
+      newgameButton.style.display = "inline";
+      gameCountLoss += 1;
+      Player.setPlayerGameScoreItem(gameName, "count_loss", gameCountLoss);
     } else {
       document.getElementById("game-time").innerHTML = timeleft;
     }
@@ -84,7 +95,16 @@ function flipCard() {
     endGame = true;
 
     // DO STUFF
+    clearInterval(downloadTimer);
     newgameButton.style.display = "inline";
+    document.getElementById("game-time").innerHTML = "Finished";
+    gameScore += 100;
+    gameCountWin += 1;
+    Player.setPlayerGameScoreItem(gameName, "score", gameScore);
+    Player.setPlayerGameScoreItem(gameName, "count_win", gameCountWin);
+
+    gameScoreElement.innerText = gameScore;
+    // gameScoreElement.innerText = gameScore + ' - total tries: ' + gameCountTotal + ' (' + gameCountWin + ' wins / ' + gameCountLoss + ' losses)';
   }
 }
 
