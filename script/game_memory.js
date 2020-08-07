@@ -51,7 +51,7 @@ newgameButton.onclick = () => {
   shuffle();
 
   // Timer
-  let timeleft = 10;
+  let timeleft = 100;
   downloadTimer = setInterval(function () {
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
