@@ -73,19 +73,37 @@
 // });
 
 // DOM VARIABLES
-let playerHeaderElement = document.getElementById("playerHeader"),
-  playerDeckElement = document.getElementById("playerDeck"),
-  playerScoreElement = document.getElementById("playerScore"),
-  dealerHeaderElement = document.getElementById("dealerHeader"),
-  dealerDeckElement = document.getElementById("dealerDeck"),
-  dealerScoreElement = document.getElementById("dealerScore"),
-  newgameButton = document.getElementById("newgame-button"),
-  hitButton = document.getElementById("hit-button"),
-  stayButton = document.getElementById("stay-button"),
-  descriptionElement = document.getElementById("description"),
-  gameElement = document.getElementById("game");
+let newgameButton = document.getElementById("newgame-button"),
+    descriptionElement = document.getElementById("description"),
+    gameElement = document.getElementById("game");
 
-//GAME Js
+// GET GAME SCORE
+const gameName = "block",
+    playerName = Player.getPlayerName();
+
+let gameScore = parseInt(Player.getPlayerGameScoreItem(gameName, "score")),
+    gameCountTotal = parseInt(
+        Player.getPlayerGameScoreItem(gameName, "count_total")
+    ),
+    gameCountWin = parseInt(Player.getPlayerGameScoreItem(gameName, "count_win")),
+    gameCountLoss = parseInt(
+        Player.getPlayerGameScoreItem(gameName, "count_loss")
+    ),
+    gameScoreElement = document.getElementById("gameScore");
+
+gameScoreElement.innerText = gameScore;
+// gameScoreElement.innerText = gameScore + ' - total tries: ' + gameCountTotal + ' (' + gameCountWin + ' wins / ' + gameCountLoss + ' losses)';
+
+// GAME VARIABLES
+
+gameElement.style.display = "none";
+
+newgameButton.onclick = () => {
+    newgameButton.style.display = "none";
+    descriptionElement.style.display = "none";
+    document.getElementById("gameSection").classList.remove("bgcolor4");
+    gameElement.style.display = "block";
+};
 
 let pane = $("#game"),
   box = $("#block"),
@@ -117,7 +135,7 @@ setInterval(function () {
 }, 10);
 
 $(document).ready(function () {
-  disableScroll();
+  //disableScroll();
   animateDiv(".block_1");
   animateDiv(".block_2");
   animateDiv(".block_3");
@@ -197,7 +215,7 @@ function getCoordinates(element) {
 }
 
 function equalPositions(pos1, pos2) {
-  console.log(pos1.top + "-" + pos2.top + " - " + pos1.left + "-" + pos2.left);
+  //console.log(pos1.top + "-" + pos2.top + " - " + pos1.left + "-" + pos2.left);
   return pos1.top === pos2.top;
 }
 
@@ -212,7 +230,7 @@ function checkHit() {
   let offsetElement = temp.offset();
 
   if (equalPositions(offsetElement, movingBlockCoor1)) {
-    alert("BAM");
+    //alert("BAM");
   }
 
   // let movingBlockCoor2 = getCoordinates("#block_2");
