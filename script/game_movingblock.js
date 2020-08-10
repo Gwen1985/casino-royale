@@ -51,16 +51,7 @@
 // console.log(b);
 // console.log(coor);
 
-let pane = $('#game'),
-    box = $('#block'),
-    w = pane.width() - box.width(),
-    d = {},
-    x = 3;
 
-function newv(v,a,b) {
-    let n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
-    return n < 0 ? 0 : n > w ? w : n;
-}
 
 // window.addEventListener('keydown', (e) => {
 //     switch (e.key) {
@@ -82,6 +73,17 @@ function newv(v,a,b) {
 //             break;
 //     }
 // });
+
+let pane = $('#game'),
+    box = $('#block'),
+    w = pane.width() - box.width(),
+    d = {},
+    x = 5;
+
+function newv(v,a,b) {
+    let n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+    return n < 0 ? 0 : n > w ? w : n;
+}
 
 $(window).keydown(function(e) { d[e.which] = true; });
 $(window).keyup(function(e) { d[e.which] = false; });
@@ -116,6 +118,11 @@ function preventDefaultForScrollKeys(e) {
         return false;
     }
 }
+
+    // Get viewport dimensions (remove the dimension of the div)
+    // $game = ($game || $(window));
+    // let h = $game.height() - 205;
+    // let w = $game.width() - 205;
 
 // modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;
