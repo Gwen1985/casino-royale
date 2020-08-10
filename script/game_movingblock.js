@@ -51,16 +51,7 @@
 // console.log(b);
 // console.log(coor);
 
-let pane = $('#game'),
-    box = $('#block'),
-    w = pane.width() - box.width(),
-    d = {},
-    x = 3;
 
-function newv(v,a,b) {
-    let n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
-    return n < 0 ? 0 : n > w ? w : n;
-}
 
 // window.addEventListener('keydown', (e) => {
 //     switch (e.key) {
@@ -83,6 +74,17 @@ function newv(v,a,b) {
 //     }
 // });
 
+let pane = $('#game'),
+    box = $('#block'),
+    w = pane.width() - box.width(),
+    d = {},
+    x = 5;
+
+function newv(v,a,b) {
+    let n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
+    return n < 0 ? 0 : n > w ? w : n;
+}
+
 $(window).keydown(function(e) { d[e.which] = true; });
 $(window).keyup(function(e) { d[e.which] = false; });
 
@@ -91,7 +93,7 @@ setInterval(function() {
         left: function(i,v) { return newv(v, 37, 39); },
         top: function(i,v) { return newv(v, 38, 40); }
     });
-}, 10);
+}, 5);
 
 $(document).ready(function () {
     animateDiv('.block_1');
@@ -105,8 +107,8 @@ function makeNewPosition($game) {
 
     // Get viewport dimensions (remove the dimension of the div)
     $game = ($game || $(window));
-    let h = $game.height() - 200;
-    let w = $game.width() - 200;
+    let h = $game.height() - 205;
+    let w = $game.width() - 205;
 
     let nh = Math.floor(Math.random() * h);
     let nw = Math.floor(Math.random() * w);
