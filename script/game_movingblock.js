@@ -94,6 +94,7 @@ setInterval(function() {
 }, 10);
 
 $(document).ready(function () {
+    disableScroll();
     animateDiv('.block_1');
     animateDiv('.block_2');
     animateDiv('.block_3');
@@ -101,19 +102,49 @@ $(document).ready(function () {
 
 });
 
-function makeNewPosition($game) {
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
-    // Get viewport dimensions (remove the dimension of the div)
-    $game = ($game || $(window));
-    let h = $game.height() - 200;
-    let w = $game.width() - 200;
-
-    let nh = Math.floor(Math.random() * h);
-    let nw = Math.floor(Math.random() * w);
-
-    return [nh, nw];
-
+function preventDefault(e) {
+    e.preventDefault();
 }
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+
 
 function getCoordinates(element) {
     let test = $(element);
@@ -125,19 +156,35 @@ function getCoordinates(element) {
 
     let coorElement = {
         top: top,
-        right: right,
-        bottom: bottom,
+        // right: right,
+        // bottom: bottom,
         left: left
     };
 
     return coorElement;
 }
 
+function equalPositions(pos1, pos2){
+    console.log(pos1.top + '-' + pos2.top + ' - ' + pos1.left + '-' + pos2.left);
+    return (pos1.top === pos2.top);
+}
+
 function checkHit() {
-    // let userBlockElement = document.getElementById(userBlock);
+    let userBlockElement = document.getElementById('block');
     // let movingBlockElement = document.getElementById(movingBlock);
     let userBlockCoor = getCoordinates("#block");
+
+
     let movingBlockCoor1 = getCoordinates("#block_1");
+
+    let temp = $('#block');
+    let offsetElement = temp.offset();
+
+    if(equalPositions(offsetElement, movingBlockCoor1)) {
+        alert('BAM');
+    }
+
+
     // let movingBlockCoor2 = getCoordinates("#block_2");
     // let movingBlockCoor3 = getCoordinates("#block_3");
     // let movingBlockCoor4 = getCoordinates("#block_4");
@@ -165,17 +212,30 @@ function animateDiv(blockElemenet) {
     let $target = $(blockElemenet);
     let newq = makeNewPosition($target.parent());
     let oldq = $target.offset();
-    let speed = 1100;//calcSpeed([oldq.top, oldq.left], newq);
-
-
-    checkHit();
+    let speed = 1100;
+    //let speed = calcSpeed([oldq.top, oldq.left], newq);
 
     $(blockElemenet).animate({
         top: newq[0],
         left: newq[1]
     }, speed, function () {
+        checkHit();
         animateDiv(blockElemenet);
     });
+}
+
+function makeNewPosition($game) {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    $game = ($game || $(window));
+    let h = $game.height() - 200;
+    let w = $game.width() - 200;
+
+    let nh = Math.floor(Math.random() * h);
+    let nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
 }
 
 function calcSpeed(prev, next) {
