@@ -39,29 +39,34 @@
       <i class="fas fa-star"></i>&nbsp;&nbsp;Total Score:
       <span id="totalScore"></span>
     </div>
-
-    <div class="container">
-      <div id="formInputName" class="row">
-        <div class="col-md-10">
-          <!--<label for="basic-url" >What is your name?</label >-->
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"
-                >Welcome! What's your name?</span
-              >
+    <!-- Start Form -->
+    <div class="container" id="test">
+      <div class="row d-flex justify-content-center">
+        <div id="formInputName" class="row">
+          <div class="col-md-10">
+            <!--<label for="basic-url" >What is your name?</label >-->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Name </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="playerName"
+                aria-describedby="basic-addon1"
+              />
             </div>
-            <input
-              type="text"
-              class="form-control"
-              id="playerName"
-              aria-describedby="basic-addon1"
-            />
+          </div>
+          <div class="col-md-2 text-right">
+            <button id="createPlayer" class="btn btn-primary">
+              Let's play
+            </button>
           </div>
         </div>
-        <div class="col-md-2 text-right">
-          <button id="createPlayer" class="btn btn-primary">Let's play</button>
-        </div>
       </div>
+    </div>
+
+    <div class="container">
       <div class="card-columns d-flex justify-content-center mb-2">
         <!-- Start Block 1 -->
         <div class="card bgcolor1">

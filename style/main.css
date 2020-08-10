@@ -145,3 +145,7 @@ p {
     margin-top: 34px;
   }
 }
+
+#createPlayer {
+  width: 120px;
+}
