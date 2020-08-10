@@ -46,7 +46,7 @@ h4 {
 }
 
 p {
-  font-size: 14pt;
+  font-size: 16pt;
   color: #fff;
 }
 
@@ -68,6 +68,11 @@ p {
   background-color: #f4a91a !important;
   font-weight: 700;
   font-size: 14pt;
+}
+
+#description {
+  max-width: 1024px;
+  margin: auto;
 }
 .card {
   max-width: 500px;
