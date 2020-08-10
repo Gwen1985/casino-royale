@@ -26,10 +26,39 @@
     />
     <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
 
-    <title>Casino Royale</title>
+    <title>Moving block game - Casino Royale</title>
   </head>
 
   <body>
+    <section id="gameSection" class="game bgcolor4">
+      <div id="description" class="row p-4">
+        <div class="col-12 text-left">
+          <h4 class="text-center">Game rules</h4>
+          <p></br>
+            You can have a taste of this game which is still a work in progress...
+          </p>
+          <p>
+            Move the square using the arrow keys.
+There are 4 other squares that move randomly around the screen. When your square hits the other squares you lose a life (starting with 3 lives) and when all your lives are gone the game is lost.
+The time since the start shows how long you survived.
+          </p>
+          <ul class="">
+            <li>
+              <i class="fas fa-caret-right"></i> Ace: 1 or 11 (your choice)
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i> 2-10: Respectively (2 = 2; 3
+              = 3; etc.)
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i> Jacks, Queens, and Kings: 10
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="game">
+    
     <div class="container">
       <header>
         <img src="assets/logo.svg" id="logo" alt="logo" height="80px" />
@@ -48,6 +77,8 @@
           </div>
         </div>
       </div>
+      </div>
+
 
       <!-- Game section -->
       <section id="gameSection" class="game">
